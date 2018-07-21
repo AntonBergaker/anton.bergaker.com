@@ -1,4 +1,3 @@
-
 // BLERGH IGNORE
 var importedItems = document.getElementsByClassName("imported");
 for (var i=0;i<importedItems.length;i++) {
@@ -9,9 +8,7 @@ for (var i=0;i<importedItems.length;i++) {
     ajax.send();
     item.outerHTML = ajax.responseText;
 }
-
 // BLERGH IGNORE END
-
 
 var mottos = [
     "Because programming needs spreadsheets",
