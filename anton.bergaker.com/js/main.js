@@ -12,10 +12,13 @@ for (var i=0;i<importedItems.length;i++) {
 
 var mottos = [
     "Because programming needs spreadsheets",
-    "Turning beans into code",
+    "Anton <3 coffee",
     "When life gives you lemons",
     "Not actually a scarecrow",
-    "Still stuck playing factorio"
+    "Still stuck playing factorio",
+    "It works on my machine",
+    "From Sweden with love",
+    "We'll burn that bridge when we get there"
 ];
 var motto = document.getElementById("motto");
 motto.innerHTML = mottos[Math.floor(Math.random()*mottos.length)];
