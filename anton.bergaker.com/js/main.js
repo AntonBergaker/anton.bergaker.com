@@ -10,6 +10,16 @@ for (var i=0;i<importedItems.length;i++) {
 }
 // BLERGH IGNORE END
 
+var reveal_apps = function() {
+    var box = document.getElementsByClassName("app_popup")[0];
+    var is_active = box.style.display == "block";
+    box.style.display = is_active ? "none" : "block";
+}
+
+window.onload = function() {
+    document.getElementById("app_popup_button").onclick = reveal_apps;
+}
+
 var mottos = [
     "Because programming needs spreadsheets",
     "Anton <3 coffee",
