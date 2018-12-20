@@ -20,7 +20,7 @@ window.onload = function() {
     document.getElementById("app_popup_button").onclick = reveal_apps;
 }
 
-var mottos = [
+var motto = [
     "Because programming needs spreadsheets",
     "Anton <3 coffee",
     "When life gives you lemons",
@@ -28,7 +28,9 @@ var mottos = [
     "Still stuck playing factorio",
     "It works on my machine",
     "From Sweden with love",
-    "We'll burn that bridge when we get there"
+    "We'll burn that bridge when we get there",
+    "Let's add it to a list! Let's add the list to a list!",
+    "You can do it 🎉"
 ];
 var motto = document.getElementById("motto");
 motto.innerHTML = mottos[Math.floor(Math.random()*mottos.length)];
