@@ -1,0 +1,71 @@
+doctype html
+html(lang='en')
+	head
+		title Anton Bergåker
+		meta(name='description', content='Personal website for Anton Bergåker outlining projects and other fun stuff')
+		meta(name='keywords', content='programming, programmer, gamedev, gamedevelopment, game, gamemaker')
+		meta(charset='utf-8')
+		// Mobile support
+		meta(name='viewport', content='width=device-width, initial-scale=1')
+		// Icons
+		link(rel='icon', type='image/png', sizes='32x32', href='favicon-32x32.png')
+		link(rel='icon', type='image/png', sizes='256x256', href='favicon-256x256.png')
+		// Material Design fonts
+		link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700', type='text/css')
+		// Font Awesome Icons
+		link(rel='stylesheet', href='https://use.fontawesome.com/releases/v5.0.13/css/all.css', integrity='sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp', crossorigin='anonymous')
+		style
+			include css/main.css
+	body
+		include header.pug
+		#container
+			.scroll_section
+				h2 Projects
+				.scroller
+					.scroll_card
+						a(href='thestorygoeson')
+							img(src='images/tsgo_banner.png', alt='The Story Goes On Banner')
+							h3 The Story Goes On
+					.scroll_card
+						a(href='minisweeper')
+							img(src='images/minisweeper_banner.png', alt='miniSweeper Banner')
+							h3 miniSweeper
+					.scroll_card
+						// a href="http://secrets.com"
+						img(src='images/secret_banner.png', alt='Just wait and see!')
+						h3 Secret - Coming 2019
+						// /a
+					.scroll_card
+						a(href='https://dontsinkgame.com/')
+							img(src='images/dont_sink_banner.png', alt="Don't Sink Banner")
+							h3 Don't Sink - Xbox Port
+					.scroll_card
+						a(href='https://github.com/AntonBergaker/SplitTask')
+							img(src='images/splittask_banner.png', alt='SplitTask Banner')
+							h3 SplitTask
+			.scroll_section
+				h2 Blog posts
+				.scroller
+					.scroll_card.scroll_card_smol
+						a(href='http://blog.tsgogame.com/implementing-coop/')
+							img(src='images/coop_banner.png')
+							.image_text Implementing Co-op into The Story Goes On
+							h3 Implementing Co-op into The Story Goes On
+					.scroll_card.scroll_card_smol
+						a
+							img(src='images/coop_banner.png')
+							.image_text Padding!
+							h3 Padding
+					.scroll_card.scroll_card_smol
+						a
+							img(src='images/coop_banner.png')
+							.image_text Padding!
+							h3 Padding
+					.scroll_card.scroll_card_smol
+						a
+							img(src='images/coop_banner.png')
+							.image_text Padding!
+							h3 Padding
+
+		script
+			include js/main.js
