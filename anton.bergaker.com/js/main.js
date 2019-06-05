@@ -1,14 +1,3 @@
-// BLERGH IGNORE
-let importedItems = document.getElementsByClassName("imported");
-for (let i=0;i<importedItems.length;i++) {
-    let item = importedItems[i];
-     let ajax = new XMLHttpRequest();
-    
-    ajax.open("GET", item.innerHTML, false);
-    ajax.send();
-    item.outerHTML = ajax.responseText;
-}
-// BLERGH IGNORE END
 let mottos = [
     "Because programming needs spreadsheets",
     "Anton <3 coffee",

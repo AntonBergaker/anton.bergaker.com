@@ -22,47 +22,66 @@ html(lang='en')
 			.scroll_section
 				h2 Projects
 				.scroller
-					.scroll_card
-						a(href='thestorygoeson')
-							img(src='images/tsgo_banner.png', alt='The Story Goes On Banner')
-							h3 The Story Goes On
-					.scroll_card
-						a(href='minisweeper')
-							img(src='images/minisweeper_banner.png', alt='miniSweeper Banner')
-							h3 miniSweeper
-					.scroll_card
-						// a href="http://secrets.com"
-						img(src='images/secret_banner.png', alt='Just wait and see!')
-						h3 Secret - Coming 2019
-						// /a
-					.scroll_card
-						a(href='https://dontsinkgame.com/')
-							img(src='images/dont_sink_banner.png', alt="Don't Sink Banner")
-							h3 Don't Sink - Xbox Port
-					.scroll_card
-						a(href='https://github.com/AntonBergaker/SplitTask')
-							img(src='images/splittask_banner.png', alt='SplitTask Banner')
-							h3 SplitTask
+					a(class='scroll_card' href='thestorygoeson')
+						img(src='images/tsgo_banner.png', alt='The Story Goes On Banner')
+						ul(class='tags')
+							li(style='background-color: #1CA972') GameMaker
+							li(style='background-color: #0A1C49') Steam
+							li(style='background-color: #0F760F') Xbox One
+						h3 The Story Goes On
+					a(class='scroll_card' href='minisweeper')
+						img(src='images/minisweeper_banner.png', alt='miniSweeper Banner')
+						ul(class='tags')
+							li(style='background-color: #1CA972') GameMaker
+							li(style='background-color: #228B22') Android
+							li(style='background-color: #147EFB') iOS
+						h3 miniSweeper
+					a(class='scroll_card')
+						img(src='images/pentapop_banner.png', alt='Pentapop Banner')
+						ul(class='tags')
+							li(style='background-color: #1CA972') GameMaker
+							li(style='background-color: #953DAC') C#
+							li(style='background-color: #2B7489') TypeScript
+							li(style='background-color: #228B22') Android
+							li(style='background-color: #147EFB') iOS
+						h3 Pentapop - Coming Soon
+					a(class='scroll_card' href='https://dontsinkgame.com/')
+						img(src='images/dont_sink_banner.png', alt="Don't Sink Banner")
+						ul(class='tags')
+							li(style='background-color: #1CA972') GameMaker
+							li(style='background-color: #C11010') Contract Work
+							li(style='background-color: #0F760F') Xbox One
+						h3 Don't Sink - Xbox Port
+					a(class='scroll_card' href='https://github.com/AntonBergaker/SplitTask')
+						img(src='images/splittask_banner.png', alt='SplitTask Banner')
+						ul(class='tags')
+							li(style='background-color: #953DAC') C#
+						h3 SplitTask
 			.scroll_section
 				h2 Other things
 				.scroller
-					.scroll_card.scroll_card_smol
-						a(href='http://blog.tsgogame.com/implementing-coop/')
-							img(src='images/coop_banner.png')
-							.image_text Implementing Co-op into The Story Goes On
-							h3 #[em Blog post]: Implementing Co-op into The Story Goes On
-					.scroll_card.scroll_card_smol
-						a(href='https://github.com/AntonBergaker/MinesweeperDiscordBot')
-							img(src='images/minesweeper_discord_bot.png')
-							h3 Minesweeper Discord Bot
-					.scroll_card.scroll_card_smol
-						a(href='https://github.com/AntonBergaker/img.bergaker.com')
-							img(src='images/image_host.png')
-							h3 Personal video and image host
-					.scroll_card.scroll_card_smol
-						a(href='https://github.com/AntonBergaker/anton.bergaker.com')
-							img(src='images/anton_bergaker_com.png')
-							h3 anton.bergaker.com
+					a(class='scroll_card scroll_card_smol' href='http://blog.tsgogame.com/implementing-coop/')
+						img(src='images/coop_banner.png')
+						ul(class='tags')
+							li(style='background-color: #9A117D') Blog Post
+							li(style='background-color: #1CA972') GameMaker
+						.image_text Implementing Co-op into The Story Goes On
+						h3 Implementing Co-op into The Story Goes On
+					a(class='scroll_card scroll_card_smol' href='https://github.com/AntonBergaker/MinesweeperDiscordBot')
+						img(src='images/minesweeper_discord_bot.png')
+						ul(class='tags')
+							li(style='background-color: #953DAC') C#
+						h3 Minesweeper Discord Bot
+					a(class='scroll_card scroll_card_smol' href='https://github.com/AntonBergaker/img.bergaker.com')
+						img(src='images/image_host.png')
+						ul(class='tags')
+							li(style='background-color: #2B7489') TypeScript
+						h3 Personal video and image host
+					a(class='scroll_card scroll_card_smol' href='https://github.com/AntonBergaker/anton.bergaker.com')
+						img(src='images/anton_bergaker_com.png')
+						ul(class='tags')
+							li(style='background-color: #E34C26') HTML5
+						h3 anton.bergaker.com
 
 		script
 			include js/main.js
