@@ -1,0 +1,49 @@
+#func {
+    margin-top: 50px;
+    font-family: 'Courier New', Courier, monospace;
+    color: #FFFFFF;
+}
+
+#func > h3 > span {
+    color: #ffb871;
+}
+
+#func #func_param {
+    color: #B2B1FF;
+}
+
+#func #func_arglabel {
+    font-size: 14px;
+}
+
+#func > table {
+    margin-top: 0px;
+    margin-left: 60px;
+    text-align: left;
+    font-size: 18px;
+}
+
+#func > table th {
+    font-family: 'Roboto';
+    font-size: 16px;
+    width: 150px;
+}
+
+#func > table th:first-child {
+    font-family: 'Courier New', Courier, monospace;
+    margin-right: 100px;
+}
+
+#func_return {
+    font-style: italic;
+    font-size: 15px;
+}
+
+#func_return > span {
+    font-style: normal;
+}
+
+#func_description {
+    font-family: 'Roboto Light';
+    font-size: 16px;
+}

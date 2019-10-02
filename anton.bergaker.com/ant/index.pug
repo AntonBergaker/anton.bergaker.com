@@ -1,0 +1,87 @@
+doctype html
+html(lang='en')
+	head
+		title Anton Bergåker - Authentic Native Textbox
+		meta(name='description', content='Function list for ANT')
+		meta(name='keywords', content='programming, programmer, gamedev, gamedevelopment, game, gamemaker, textbox, ios, android')
+		include ../tags.pug
+		style
+			include ../css/main.css
+			include ../css/documentation.css
+	body
+		include ../header.pug
+		#container
+			h2 Authentic Native Textbox
+
+			mixin func(title, args, returns, description )
+				#func
+					h3
+						span= title
+						| (
+						each arg, index in args
+							if (index != 0)
+								| , 
+							span#func_param= arg.name 
+						| )
+					if (args.length>0)
+						p#func_arglabel Arguments
+					table
+						each arg in args
+							tr
+								th=arg.name
+								th=arg.desc
+					p#func_return
+						span Returns: 
+						= returns
+					p#func_description=description
+
+			+func(
+				"ant_textbox_create", [],
+				"Created textbox",
+				"Creates a new textbox and returns it."
+			)
+
+			+func(
+				"ant_textbox_remove",
+				[
+					{
+						name: "textbox",
+						desc: "Textbox to remove"
+					}
+				],
+				"Created textbox",
+				"Creates a new textbox and returns it."
+			)
+			
+			+func(
+				"ant_textbox_set_position",
+				[
+					{
+						name: "textbox",
+						desc: "Textbox to apply to"
+					},
+					{
+						name: "x",
+						desc: "Position y in pixels"
+					},
+					{
+						name: "y",
+						desc: "Height in pixels"
+					},
+					{
+						name: "width",
+						desc: "Width in pixels"
+					},
+					{
+						name: "height",
+						desc: "Height in pixels"
+					}
+				],
+				"0 if successful, -1 if not",
+				"Positions the provided textbox at the given location."
+			)
+
+
+
+		script
+			include ../js/main.js

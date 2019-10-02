@@ -4,16 +4,7 @@ html(lang='en')
 		title Anton Bergåker
 		meta(name='description', content='Personal website for Anton Bergåker outlining projects and other fun stuff')
 		meta(name='keywords', content='programming, programmer, gamedev, gamedevelopment, game, gamemaker')
-		meta(charset='utf-8')
-		// Mobile support
-		meta(name='viewport', content='width=device-width, initial-scale=1')
-		// Icons
-		link(rel='icon', type='image/png', sizes='32x32', href='favicon-32x32.png')
-		link(rel='icon', type='image/png', sizes='256x256', href='favicon-256x256.png')
-		// Material Design fonts
-		link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700', type='text/css')
-		// Font Awesome Icons
-		link(rel='stylesheet', href='https://use.fontawesome.com/releases/v5.0.13/css/all.css', integrity='sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp', crossorigin='anonymous')
+		include tags.pug
 		style
 			include css/main.css
 	body
@@ -22,15 +13,15 @@ html(lang='en')
 			.scroll_section
 				h2 Projects
 				.scroller
-					a(class='scroll_card' href='thestorygoeson')
+					a(class='scroll_card' href='/thestorygoeson')
 						img(src='images/tsgo_banner.png', alt='The Story Goes On Banner')
 						ul(class='tags')
 							li(style='background-color: #1CA972') GameMaker
 							li(style='background-color: #0A1C49') Steam
-							li(style='background-color: #DE000F') Switch
+							li(style='background-color: #DE000F') Nintendo Switch
 							li(style='background-color: #0F760F') Xbox One
 						h3 The Story Goes On
-					a(class='scroll_card' href='minisweeper')
+					a(class='scroll_card' href='/minisweeper')
 						img(src='images/minisweeper_banner.png', alt='miniSweeper Banner')
 						ul(class='tags')
 							li(style='background-color: #1CA972') GameMaker
@@ -68,6 +59,18 @@ html(lang='en')
 							li(style='background-color: #1CA972') GameMaker
 						.image_text Implementing Co-op into The Story Goes On
 						h3 Implementing Co-op into The Story Goes On
+					a(class='scroll_card scroll_card_smol' href='/hangman')
+						img(src='images/evil_hangman.png')
+						ul(class='tags')
+							li(style='background-color: #2B7489') TypeScript
+							li(style='background-color: #E34C26') HTML5
+						h3 Evil Hangman
+					a(class='scroll_card scroll_card_smol' href='https://marketplace.yoyogames.com/assets/8620/android-native-textbox')
+						img(src='images/minesweeper_discord_bot.png')
+						ul(class='tags')
+							li(style='background-color: #1CA972') GameMaker
+							li(style='background-color: #FB422D') Extension
+						h3 Authentic Native Textbox
 					a(class='scroll_card scroll_card_smol' href='https://github.com/AntonBergaker/MinesweeperDiscordBot')
 						img(src='images/minesweeper_discord_bot.png')
 						ul(class='tags')

@@ -1,20 +1,10 @@
 doctype html
 html(lang='en')
 	head
-		title Anton Bergåker
+		title Anton Bergåker - miniSweeper
 		meta(name='description', content='Links and other fun stuff about miniSweeper, a MineSweeper clone')
 		meta(name='keywords', content='programming, programmer, gamedev, gamedevelopment, game, gamemaker, minesweeper')
-		meta(charset='utf-8')
-		// Mobile support
-		meta(name='viewport', content='width=device-width, initial-scale=1')
-		// Icons
-		link(rel='icon', type='image/png', sizes='32x32', href='../favicon-32x32.png')
-		link(rel='icon', type='image/png', sizes='256x256', href='../favicon-256x256.png')
-		// Material Design fonts
-		link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700', type='text/css')
-		// Font Awesome Icons
-		link(rel='stylesheet', href='https://use.fontawesome.com/releases/v5.0.13/css/all.css', integrity='sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp', crossorigin='anonymous')
-
+		include ../tags.pug
 		style
 			include ../css/main.css
 	body
@@ -22,8 +12,8 @@ html(lang='en')
 		include ../header.pug
 		#container
 			.main_banner_wrapper
-				img.main_banner.main_banner_large(src='../images/banner_minisweeper_large.png')
-				img.main_banner.main_banner_mobile(src='../images/banner_minisweeper_mobile.png')
+				img.main_banner.main_banner_large(src='/images/banner_minisweeper_large.png')
+				img.main_banner.main_banner_mobile(src='/images/banner_minisweeper_mobile.png')
 			.scroll_section
 				.scroller
 					.scroll_card.scroll_card_extra_smol
