@@ -33,7 +33,10 @@ html(lang='en')
 					p#func_return
 						span Returns: 
 						= returns
-					p#func_description=description
+					if (description)
+						p#func_description!=description
+					if (block)
+						block
 
 			+func(
 				"ant_textbox_create", [],
@@ -80,8 +83,124 @@ html(lang='en')
 				"0 if successful, -1 if not",
 				"Positions the provided textbox at the given location."
 			)
+			
+			+func(
+				"ant_textbox_android_set_font",
+				[
+					{
+						name: "textbox",
+						desc: "Textbox to apply to"
+					},
+					{
+						name: "font",
+						desc: "Name of the font to style the textbox with"
+					}
+				],
+				"0 if successful, -1 if not",
+				"Sets what font the textbox should use on an Android system."
+			)
+				p The available fonts are as follows
+				table
+					table
+						tr
+							td sans-serif-thin
+							td Roboto Thin
+						tr
+							td sans-serif-light
+							td Roboto Light
+						tr
+							td sans-serif
+							td Roboto Regular
+						tr
+							td sans-serif-medium
+							td Roboto Medium
+						tr
+							td sans-serif-black
+							td Roboto Black
+						tr
+							td sans-serif-condensed-light
+							td Roboto Condensed Light
+						tr
+							td sans-serif-condensed
+							td Roboto Condensed Regular
+						tr
+							td sans-serif-condensed-medium
+							td Roboto Condensed Medium
+						tr
+							td serif
+							td Noto Serif
+						tr
+							td monospace
+							td Droid Sans Mono
+						tr
+							td serif-monospace
+							td CutiveMono
+						tr
+							td cursive
+							td Dancing Script
+						tr
+							td sans-serif-smallcaps
+							td CarroisGothic SC
 
+			+func(
+				"ant_textbox_ios_set_font",
+				[
+					{
+						name: "textbox",
+						desc: "Textbox to apply to"
+					},
+					{
+						name: "font",
+						desc: "Name of the font to style the textbox with"
+					}
+				],
+				"0 if successful, -1 if not",
+				"Sets what font the textbox should use on an iOS system. The available fonts can be found <a href=\"https://iosfontlist.com\">here</a>."
+			)
 
+			+func(
+				"ant_textbox_set_color",
+				[
+					{
+						name: "textbox",
+						desc: "Textbox to apply to"
+					},
+					{
+						name: "color",
+						desc: "BGR color value"
+					},
+					{
+						name: "alpha",
+						desc: "Alpha value 0-1"
+					}
+				],
+				"0 if successful, -1 if not",
+				"Sets the color and alpha of the text inside the textbox. Will not affect other textbox graphical elements, like the selection color/strength."
+			)
+
+			+func(
+				"ant_textbox_focus",
+				[
+					{
+						name: "textbox",
+						desc: "Textbox to focus"
+					}
+				],
+				"0 if successful, -1 if not",
+				"Focuses the provided textbox. This will select it and show the virtual keyboard, if applicable."
+			)	
+
+			+func(
+				"ant_textbox_is_focused",
+				[
+					{
+						name: "textbox",
+						desc: "Textbox to focus"
+					}
+				],
+				"0 if successful, -1 if not",
+				"Focuses the provided textbox. This will select it and show the virtual keyboard, if applicable."
+			)		
 
 		script
 			include ../js/main.js
