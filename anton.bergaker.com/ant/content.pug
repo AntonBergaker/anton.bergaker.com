@@ -1,0 +1,347 @@
+#container
+    h2 Authentic Native Textbox
+    p 
+        | Authentic Native Textbox creates native textboxes that are overlaid on top of the game. Because of this it's not possible to draw anything over them. 
+    p
+        | Textboxes are created in code and must be manually cleaned up.
+        | Textboxes will automatically launch the virtual keyboard whenever they are pressed and will handle copy/pasting, selections, and other various features you expect in textboxes on the native platforms.
+    p
+        | To detect if the virtual keyboard is out you cannot use the inbuilt #[a(href="https://docs2.yoyogames.com/source/_build/3_scripting/4_gml_reference/controls/virtual%20keys/keyboard_virtual_status.html") keyboard_virtual_status()] as it will not detect if the keyboard was launched by a textbox.
+        | However #[a(href="https://docs2.yoyogames.com/source/_build/3_scripting/4_gml_reference/controls/virtual%20keys/keyboard_virtual_height.html") keyboard_virtual_height()] works as normal and can be used instead.
+
+
+    mixin func(title, args, returns, description )
+        #func
+            h3
+                span= title
+                | (
+                each arg, index in args
+                    if (index != 0)
+                        | , 
+                    span#func_param= arg.name 
+                | )
+            if (args.length>0)
+                p#func_arglabel Arguments
+            table
+                each arg in args
+                    tr
+                        th=arg.name
+                        th=arg.desc
+            p#func_return
+                span Returns: 
+                = returns
+            if (description)
+                p#func_description!=description
+            if (block)
+                block
+
+    +func(
+        "ant_textbox_create", [],
+        "Created textbox",
+        "Creates a new textbox and returns it."
+    )
+
+    +func(
+        "ant_textbox_remove",
+        [
+            {
+                name: "textbox",
+                desc: "Textbox to remove"
+            }
+        ],
+        "Created textbox",
+        "Creates a new textbox and returns it."
+    )
+    
+    +func(
+        "ant_textbox_set_position",
+        [
+            {
+                name: "textbox",
+                desc: "Textbox to apply to"
+            },
+            {
+                name: "x",
+                desc: "Position y in pixels"
+            },
+            {
+                name: "y",
+                desc: "Height in pixels"
+            },
+            {
+                name: "width",
+                desc: "Width in pixels"
+            },
+            {
+                name: "height",
+                desc: "Height in pixels"
+            }
+        ],
+        "0 if successful, -1 if not",
+        "Positions the provided textbox at the given location."
+    )
+    
+    +func(
+        "ant_textbox_set_text_size",
+        [
+            {
+                name: "textbox",
+                desc: "Textbox to apply to"
+            },
+            {
+                name: "size",
+                desc: "Size of the text inside the box in pts"
+            }
+        ],
+        "0 if successful, -1 if not",
+        "Sets the size of the text in the textbox. The value is in points and should match what the equivalent font is set to in GameMaker."
+    )
+
+    +func(
+        "ant_textbox_android_set_font",
+        [
+            {
+                name: "textbox",
+                desc: "Textbox to apply to"
+            },
+            {
+                name: "font",
+                desc: "Name of the font to style the textbox with"
+            }
+        ],
+        "0 if successful, -1 if not",
+        "Sets what font the textbox should use on an Android system."
+    )
+        p The available fonts are as follows
+        table
+            table
+                tr
+                    td #[strong Identifier to provide]
+                    td #[strong Actual font]
+                tr
+                    td sans-serif-thin
+                    td Roboto Thin
+                tr
+                    td sans-serif-light
+                    td Roboto Light
+                tr
+                    td sans-serif
+                    td Roboto Regular
+                tr
+                    td sans-serif-medium
+                    td Roboto Medium
+                tr
+                    td sans-serif-black
+                    td Roboto Black
+                tr
+                    td sans-serif-condensed-light
+                    td Roboto Condensed Light
+                tr
+                    td sans-serif-condensed
+                    td Roboto Condensed Regular
+                tr
+                    td sans-serif-condensed-medium
+                    td Roboto Condensed Medium
+                tr
+                    td serif
+                    td Noto Serif
+                tr
+                    td monospace
+                    td Droid Sans Mono
+                tr
+                    td serif-monospace
+                    td CutiveMono
+                tr
+                    td cursive
+                    td Dancing Script
+                tr
+                    td sans-serif-smallcaps
+                    td CarroisGothic SC
+
+    +func(
+        "ant_textbox_ios_set_font",
+        [
+            {
+                name: "textbox",
+                desc: "Textbox to apply to"
+            },
+            {
+                name: "font",
+                desc: "Name of the font to style the textbox with"
+            }
+        ],
+        "0 if successful, -1 if not",
+        "Sets what font the textbox should use on an iOS system. The available fonts can be found <a href=\"https://iosfontlist.com\">here</a>."
+    )
+
+    +func(
+        "ant_textbox_set_text",
+        [
+            {
+                name: "textbox",
+                desc: "Textbox to apply to"
+            },
+            {
+                name: "text",
+                desc: "Text to set inside the textbox"
+            }
+        ],
+        "0 if successful, -1 if not",
+        "Sets the text of the textbox to the provided string"
+    )
+
+    +func(
+        "ant_textbox_get_text",
+        [
+            {
+                name: "textbox",
+                desc: "Textbox to get text from"
+            }
+        ],
+        "Text of the textbox",
+        "Gets the text currently inside the textbox as a string"
+    )
+
+    +func(
+        "ant_textbox_set_color",
+        [
+            {
+                name: "textbox",
+                desc: "Textbox to apply to"
+            },
+            {
+                name: "color",
+                desc: "BGR color value"
+            },
+            {
+                name: "alpha",
+                desc: "Alpha value 0-1"
+            }
+        ],
+        "0 if successful, -1 if not",
+        "Sets the color and alpha of the text inside the textbox. Will not affect other textbox graphical elements, like the selection color/strength."
+    )
+
+    +func(
+        "ant_textbox_focus",
+        [
+            {
+                name: "textbox",
+                desc: "Textbox to focus"
+            }
+        ],
+        "0 if successful, -1 if not",
+        "Focuses the provided textbox. This will select it and show the virtual keyboard, if applicable."
+    )
+
+    +func(
+        "ant_textbox_unfocus",
+        [
+            {
+                name: "textbox",
+                desc: "Textbox to unfocus"
+            }
+        ],
+        "0 if successful, -1 if not",
+        "Unfocus the provided textbox. This will deselect it and prevent further input from reaching it."
+    )
+
+    +func(
+        "ant_textbox_is_focused",
+        [
+            {
+                name: "textbox",
+                desc: "Textbox to check"
+            }
+        ],
+        "0 if successful, -1 if not",
+        "Returns if the textbox is focused or not."
+    )
+
+    +func(
+        "ant_textbox_has_submitted",
+        [
+            {
+                name: "textbox",
+                desc: "Textbox to check"
+            }
+        ],
+        "True if the textbox hit submit, otherwise false",
+        "Returns true if the user has clicked the submit/enter key on the keyboard, since this function was ran last."
+    )
+
+    +func(
+        "ant_textbox_has_submitted",
+        [
+            {
+                name: "textbox",
+                desc: "Textbox to apply to"
+            }
+        ],
+        "True if the textbox hit submit, otherwise false",
+        "Returns true if the user has clicked the submit/enter key on the keyboard, since this function was ran last."
+    )
+
+    +func(
+        "ant_textbox_android_set_style",
+        [
+            {
+                name: "textbox",
+                desc: "Textbox to apply to"
+            },
+            {
+                name: "style",
+                desc: "Style-flags to apply to the textbox"
+            }
+        ],
+        "0 if successful, -1 if not",
+        "Applies the provided flags to the textbox on Android. This lets you mark a textbox as made for passwords, emails etc. All the constants are available at <a href=\"https://developer.android.com/reference/android/text/InputType\">here</a>. To pass multile flags, use a bitwise or \"|\""
+    )
+
+    +func(
+        "ant_textbox_ios_set_password",
+        [
+            {
+                name: "textbox",
+                desc: "Textbox to apply to"
+            },
+            {
+                name: "password",
+                desc: "If true, textbox is marked as password input"
+            }
+        ],
+        "0 if successful, -1 if not",
+        "Sets the box to be treated as a password box in iOS. This means the text will be converted into stars and you will not be able to copy text from it."
+    )
+    
+    +func(
+        "ant_textbox_set_enabled",
+        [
+            {
+                name: "textbox",
+                desc: "Textbox to apply to"
+            },
+            {
+                name: "enabled",
+                desc: "Controls if the textbox is enabled or not"
+            }
+        ],
+        "0 if successful, -1 if not",
+        "Configures if the textbox is visible and interactable. If enabled is set to false, the textbox will not be visible or pressable."
+    )
+
+    +func(
+        "ant_textbox_set_focusable",
+        [
+            {
+                name: "textbox",
+                desc: "Textbox to apply to"
+            },
+            {
+                name: "focusable",
+                desc: "Controls if the textbox is focusable or not"
+            }
+        ],
+        "0 if successful, -1 if not",
+        "Set if the textbox is clickable or not. If it’s set to false the textbox will not be able to be pressed, but will still be visible."
+    )
