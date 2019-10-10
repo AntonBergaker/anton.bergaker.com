@@ -3,4 +3,5 @@
 */minisweeper/miniSweeper.*
 */pentapop/play/*
 */pentapop/Pentapop.*
+node_modules/
 out/
