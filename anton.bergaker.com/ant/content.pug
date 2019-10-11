@@ -186,6 +186,86 @@ append funcs
     )
 
 append toc
+    +toc("ant_textbox_set_style")
+append funcs
+    +func(
+        "ant_textbox_set_style",
+        [
+            {
+                name: "textbox",
+                desc: "Textbox to apply to"
+            },
+            {
+                name: "type",
+                desc: "Type of textbox this should be"
+            },
+            {
+                name: "capitalization",
+                desc: "Type of capitalization this textbox should use"
+            },
+            {
+                name: "autocorrect",
+                desc: "Type of autocorrect this textbox should use"
+            }
+        ],
+        "0 if successful, -1 if not"
+    )
+        p Sets the textbox's style on all platforms. This will replace anything previously set by the platform specific style functions. The function arguments expect macros.
+        p This constant is used to decide what type of keyboard to show.
+        table.const_list
+            tr
+                td #[strong Keyboard type]
+                td #[strong Description]
+            tr
+                td ant_style_type_default
+                td Shows a default keyboard
+            tr
+                td ant_style_type_ascii
+                td Shows a keyboard with ascii only
+            tr
+                td ant_style_type_url
+                td Shows a keyboard for url input
+            tr
+                td ant_style_type_email
+                td Shows a keyboard for email input
+            tr
+                td ant_style_type_password
+                td Hides the entered text and does not allow copying
+            tr
+                td ant_style_type_numbers
+                td Shows a numberpad
+
+        p This constant is used to determine how the text should be capitalized
+        table.const_list
+            tr
+                td #[strong Capitalization type]
+                td #[strong Description]
+            tr
+                td ant_style_capitalize_none
+                td Nothing is capitalized
+            tr
+                td ant_style_capitalize_words
+                td Words are capitalized
+            tr
+                td ant_style_capitalize_sentences
+                td Sentences are capitalized
+            tr
+                td ant_style_capitalize_all
+                td All text is capitalized
+
+        p This constant determines if autocorrect should be enabled or not
+        table.const_list
+            tr
+                td #[strong Autocorrection type]
+                td #[strong Description]
+            tr
+                td ant_style_autocorrect_off
+                td Autocorrect is disabled
+            tr
+                td ant_style_autocorrect_on
+                td Autocorrect is enabled
+
+append toc
     +toc("ant_textbox_set_text")
 append funcs
     +func(
@@ -303,71 +383,6 @@ append funcs
     )
 
 append toc
-    +toc("ant_textbox_android_set_style")
-append funcs
-    +func(
-        "ant_textbox_android_set_style",
-        [
-            {
-                name: "textbox",
-                desc: "Textbox to apply to"
-            },
-            {
-                name: "style",
-                desc: "Style-flags to apply to the textbox"
-            }
-        ],
-        "0 if successful, -1 if not",
-        "Applies the provided flags to the textbox on Android. This lets you mark a textbox as made for passwords, emails etc. All the constants are available <a href=\"https://developer.android.com/reference/android/text/InputType\">here</a>. To pass multile flags, use a bitwise or \"|\""
-    )
-
-append toc
-    +toc("ant_textbox_ios_set_style")
-append funcs
-    +func(
-        "ant_textbox_ios_set_style",
-        [
-            {
-                name: "textbox",
-                desc: "Textbox to apply to"
-            },
-            {
-                name: "type",
-                desc: "Type of textbox this should be"
-            },
-            {
-                name: "autocorrect",
-                desc: "Type of autocorrect this textbox should use"
-            },
-            {
-                name: "capitalization",
-                desc: "Type of capitalization this textbox should use"
-            }
-        ],
-        "0 if successful, -1 if not",
-        "Applies the provided flags to the textbox on iOS. This lets you mark a textbox as made for emails, phone numbers etc. All the constants are available <a href=\"https://developer.apple.com/documentation/uikit/uikeyboardtype\">here</a>."
-    )
-
-append toc
-    +toc("ant_textbox_ios_set_password")
-append funcs
-    +func(
-        "ant_textbox_ios_set_password",
-        [
-            {
-                name: "textbox",
-                desc: "Textbox to apply to"
-            },
-            {
-                name: "password",
-                desc: "If true, textbox is marked as password input"
-            }
-        ],
-        "0 if successful, -1 if not",
-        "Sets the box to be treated as a password box in iOS. This means the text will be converted into stars and you will not be able to copy text from it."
-    )
-
-append toc
     +toc("ant_textbox_set_enabled")
 append funcs
     +func(
@@ -403,4 +418,70 @@ append funcs
         ],
         "0 if successful, -1 if not",
         "Set if the textbox is clickable or not. If it’s set to false the textbox will not be able to be pressed, but will still be visible."
+    )
+
+
+append toc
+    +toc("ant_textbox_android_set_style")
+append funcs
+    +func(
+        "ant_textbox_android_set_style",
+        [
+            {
+                name: "textbox",
+                desc: "Textbox to apply to"
+            },
+            {
+                name: "style",
+                desc: "Style-flags to apply to the textbox"
+            }
+        ],
+        "0 if successful, -1 if not",
+        "Applies the provided flags to the textbox on Android. This lets you mark a textbox as made for passwords, emails etc. All the constants are available <a href=\"https://developer.android.com/reference/android/text/InputType\">here</a>. To pass multile flags, use a bitwise or \"|\". This is only intended to be used if you require special functionality, for general use the normal style function is recommended."
+    )
+
+append toc
+    +toc("ant_textbox_ios_set_style")
+append funcs
+    +func(
+        "ant_textbox_ios_set_style",
+        [
+            {
+                name: "textbox",
+                desc: "Textbox to apply to"
+            },
+            {
+                name: "type",
+                desc: "Type of textbox this should be"
+            },
+                        {
+                name: "capitalization",
+                desc: "Type of capitalization this textbox should use"
+            },
+            {
+                name: "autocorrect",
+                desc: "Type of autocorrect this textbox should use"
+            }
+        ],
+        "0 if successful, -1 if not",
+        "Applies the provided flags to the textbox on iOS. This lets you mark a textbox as made for emails, phone numbers etc. All the constants are available <a href=\"https://developer.apple.com/documentation/uikit/uikeyboardtype\">here</a>. This is only intended to be used if you require special functionality, for general use the normal style function is recommended."
+    )
+
+append toc
+    +toc("ant_textbox_ios_set_password")
+append funcs
+    +func(
+        "ant_textbox_ios_set_password",
+        [
+            {
+                name: "textbox",
+                desc: "Textbox to apply to"
+            },
+            {
+                name: "password",
+                desc: "If true, textbox is marked as password input"
+            }
+        ],
+        "0 if successful, -1 if not",
+        "Sets the box to be treated as a password box in iOS. This means the text will be converted into stars and you will not be able to copy text from it."
     )
