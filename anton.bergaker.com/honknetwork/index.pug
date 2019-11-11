@@ -1,0 +1,18 @@
+html
+	head
+		title="Honk Network"
+		meta(name='viewport', content='width=device-width, initial-scale=1')
+		meta(name='author', content='Anton & Jacob')
+		style
+			include honk.css
+	body
+		#container
+			#honk_collection
+			#honk_options
+			#honkcenter
+				img#honk_me(src="./honk_me.png" alt="Honk" onmouseover="this.src='./hoonkver.png';" onmouseout="this.src='./honk_me.png';")
+			p#active_users Active ducks: 0
+			img#volume(src="./volume0.png" alt="Volume")
+		script(src="https://honk.bergaker.com/socket.io/socket.io.js")
+		script
+			include honk.js
