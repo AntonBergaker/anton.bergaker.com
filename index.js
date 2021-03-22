@@ -24,6 +24,8 @@ app.use(function (req, res, next) {
         next();
     }
 });
+
 app.use(express.static(myPath));
+app.use(express.static(path.join(__dirname, '/externally_made_stuff')))1;
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))

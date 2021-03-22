@@ -129,9 +129,21 @@ h3 {
     font-family: 'Roboto';
 }
 
+.scroll_card .image-container > img {
+    position: absolute;
+    height: 100%;
+    left: 0;
+    top: 0;
+}
 
-.scroll_card img {
+.scroll_card .image-container {
+    position: relative;
     width: 100%;
+    padding-top: 56.2765957446808%; /* Ratio between image height and width, making it as tall as it's supposed to be before images are loaded */
+}
+
+.scroll_card.scroll_card_smol .image-container {
+    padding-top: 56.2903225806452%;
 }
 
 .image_text {

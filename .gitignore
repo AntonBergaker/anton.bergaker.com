@@ -1,7 +1,4 @@
 */.vscode/*
-*/minisweeper/play/*
-*/minisweeper/miniSweeper.*
-*/pentapop/play/*
-*/pentapop/Pentapop.*
 node_modules/
 out/
+externally_made_stuff/
