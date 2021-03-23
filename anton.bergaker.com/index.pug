@@ -1,5 +1,5 @@
 doctype html
-html(lang='en')
+html(lang='en', xmlns="http://www.w3.org/1999/xhtml", prefix="og: http://ogp.me/ns#")
 	head
 		include analytics.pug
 		title Anton Bergåker
@@ -13,121 +13,148 @@ html(lang='en')
 	body
 		include header.pug
 		#container
+
+			mixin Tag(name, color)
+				- 
+					let colors = {
+						gamemaker: {name: 'GameMaker', color:'#1CA972'},
+						steam: {name: 'Steam', color: '#0A1C49'},
+						nintendo_switch: { name: 'Nintendo Switch', color: '#DE000F'},
+						xbox_one: { name: 'Xbox One', color: '#0F760F'},
+						play_in_browser: {name: 'Play in Browser', color: '#F89A1B'},
+						csharp: {name: 'C#', color: '#953DAC'},
+						typescript: {name: 'TypeScript', color: '#2B7489'},
+						android: {name: 'Android', color: '#228B22'},
+						ios: {name: 'iOS', color: '#147EFB'},
+						contract_work: {name: 'Contract Work', color: '#A10707'},
+						html5: {name: 'HTML5', color: '#E34C26'},
+						nodejs: {name: 'Node.js', color: '#669F64'},
+						game_jam: {name: 'Game Jam', color: '#A45EE5'},
+						blog_post: {name: 'Blog Post', color: '#296D98'},
+						extension: {name: 'Extension', color: '#FB422D'}
+					};
+				if color
+					li(style='background-color: ' + color)=name
+				else if colors[name]
+					li(style='background-color: ' + colors[name].color)=colors[name].name
+				else 
+					li=name
+					
 			.scroll_section
 				h2 Projects
 				.scroller
 
-					mixin scroll-card(name, href, image)
-						a(class='scroll_card' href=href)
+					mixin ScrollCard(name, href, image)
+						a.scroll_card(href=href)
 							.image-container
 								img(src=image, alt=name+' Banner')
-							ul(class='tags')
+							ul.tags
 								block
 							h3= name
 
-					+scroll-card('The Story Goes On', '/thestorygoeson', 'images/tsgo_banner.png')
-						li(style='background-color: #1CA972') GameMaker
-						li(style='background-color: #0A1C49') Steam
-						li(style='background-color: #DE000F') Nintendo Switch
-						li(style='background-color: #0F760F') Xbox One
+					+ScrollCard('The Story Goes On', '/thestorygoeson', 'images/tsgo_banner.png')
+						+Tag('gamemaker')
+						+Tag('steam')
+						+Tag('nintendo_switch')
+						+Tag('xbox_one')
 
-					+scroll-card('Pentapop', '/pentapop', 'images/pentapop_banner.png')
-						li(style='background-color: #F89A1B') Play in browser
-						li(style='background-color: #1CA972') GameMaker
-						li(style='background-color: #953DAC') C#
-						li(style='background-color: #2B7489') TypeScript
-						li(style='background-color: #228B22') Android
-						li(style='background-color: #147EFB') iOS
+					+ScrollCard('Pentapop', '/pentapop', 'images/pentapop_banner.png')
+						+Tag('play_in_browser')
+						+Tag('gamemaker')
+						+Tag('csharp')
+						+Tag('typescript')
+						+Tag('android')
+						+Tag('ios')
 					
-					+scroll-card('miniSweeper', '/minisweeper', 'images/minisweeper_banner.png')
-						li(style='background-color: #F89A1B') Play in browser
-						li(style='background-color: #1CA972') GameMaker
-						li(style='background-color: #228B22') Android
-						li(style='background-color: #147EFB') iOS
+					+ScrollCard('miniSweeper', '/minisweeper', 'images/minisweeper_banner.png')
+						+Tag('play_in_browser')
+						+Tag('gamemaker')
+						+Tag('android')
+						+Tag('ios')
 
-					+scroll-card('Don\'t Sink - Xbox Port', 'https://store.steampowered.com/app/710610/Dont_Sink/', 'images/dont_sink_banner.png')
-						li(style='background-color: #1CA972') GameMaker
-						li(style='background-color: #A10707') Contract Work
-						li(style='background-color: #0F760F') Xbox One
+					+ScrollCard('Don\'t Sink - Xbox Port', 'https://store.steampowered.com/app/710610/Dont_Sink/', 'images/dont_sink_banner.png')
+						+Tag('gamemaker')
+						+Tag('contract_work')
+						+Tag('xbox_one')
 
-					+scroll-card('BunBundle', 'https://github.com/AntonBergaker/BunBundle', 'images/bunbundle_banner.png')
-						li(style='background-color: #953DAC') C#
+					+ScrollCard('BunBundle', 'https://github.com/AntonBergaker/BunBundle', 'images/bunbundle_banner.png')
+						+Tag('csharp')
 
 					
 			.scroll_section
 				h2 Other things
 				.scroller
 
-					mixin scroll-card-smol(name, href, image, image_text)
-						a(class='scroll_card scroll_card_smol' href=href)
+					mixin ScrollCardSmol(name, href, image, image_text)
+						a.scroll_card.scroll_card_smol(href=href)
 							.image-container
 								img(src=image, alt=name+' Banner')
-							ul(class='tags')
+							ul.tags
 								block
 							if image_text 
 								.image_text= image_text
 							h3= name
 					
-					+scroll-card-smol('Evil Hangman', '/hangman', 'images/evil_hangman.png')
-						li(style='background-color: #F89A1B') Play in Browser
-						li(style='background-color: #2B7489') TypeScript
-						li(style='background-color: #E34C26') HTML5
+					+ScrollCardSmol('Evil Hangman', '/hangman', 'images/evil_hangman.png')
+						+Tag('play_in_browser')
+						+Tag('typescript')
+						+Tag('html5')
 
-					+scroll-card-smol('Honk Network', '/honknetwork/', 'images/honk_network.png')
-						li(style='background-color: #F89A1B') Play in Browser
-						li(style='background-color: #669F64') Node.js
-						li(style='background-color: #2B7489') TypeScript
-						li(style='background-color: #E34C26') HTML5
+					+ScrollCardSmol('Honk Network', '/honknetwork/', 'images/honk_network.png')
+						+Tag('play_in_browser')
+						+Tag('nodejs')
+						+Tag('typescript')
+						+Tag('html5')
 
-					+scroll-card-smol('Rover Wars', '/rover_wars/', 'images/rover_wars.png')
-						li(style='background-color: #F89A1B') Play in Browser
-						li(style='background-color: #1CA972') GameMaker
-						li(style='background-color: #A45EE5') Game Jam
+					+ScrollCardSmol('Rover Wars', '/rover_wars/', 'images/rover_wars.png')
+						+Tag('play_in_browser')
+						+Tag('gamemaker')
+						+Tag('game_jam')
 
-					+scroll-card-smol('Vibus', '/vibus/', 'images/vibus.png')
-						li(style='background-color: #F89A1B') Play in Browser
-						li(style='background-color: #1CA972') GameMaker
-						li(style='background-color: #A45EE5') Game Jam
+					+ScrollCardSmol('Vibus', '/vibus/', 'images/vibus.png')
+						+Tag('play_in_browser')
+						+Tag('gamemaker')
+						+Tag('game_jam')
 
-					+scroll-card-smol('there\'s something in the dark', '/theres_something_in_the_dark', 'images/tsitd.png')
-						li(style='background-color: #F89A1B') Play in Browser
-						li(style='background-color: #1CA972') GameMaker
-						li(style='background-color: #A45EE5') Game Jam
+					+ScrollCardSmol('there\'s something in the dark', '/theres_something_in_the_dark', 'images/tsitd.png')
+						+Tag('play_in_browser')
+						+Tag('gamemaker')
+						+Tag('game_jam')
 
-					+scroll-card-smol('Caffeine King', '/caffeineking/', 'images/caffeine_king.png')
-						li(style='background-color: #F89A1B') Play in Browser
-						li(style='background-color: #1CA972') GameMaker
-						li(style='background-color: #A45EE5') Game Jam
+					+ScrollCardSmol('Caffeine King', '/caffeineking/', 'images/caffeine_king.png')
+						+Tag('play_in_browser')
+						+Tag('gamemaker')
+						+Tag('game_jam')
 
-					+scroll-card-smol('Implementing Co-op into The Story Goes On', 'http://blog.tsgogame.com/implementing-coop/', 'images/coop_banner.png', 'Implementing Co-op into The Story Goes On')
-						li(style='background-color: #296D98') Blog Post
-						li(style='background-color: #1CA972') GameMaker
+					+ScrollCardSmol('Implementing Co-op into The Story Goes On', 'http://blog.tsgogame.com/implementing-coop/', 'images/coop_banner.png', 'Implementing Co-op into The Story Goes On')
+						+Tag('blog_post')
+						+Tag('gamemaker')
 
-					+scroll-card-smol('Authentic Native Textbox', 'https://marketplace.yoyogames.com/assets/8620/android-native-textbox', 'images/ant.png')
-						li(style='background-color: #1CA972') GameMaker
-						li(style='background-color: #FB422D') Extension
-						li(style='background-color: #228B22') Android
-						li(style='background-color: #147EFB') iOS
+					+ScrollCardSmol('Authentic Native Textbox', 'https://marketplace.yoyogames.com/assets/8620/android-native-textbox', 'images/ant.png')
+						+Tag('gamemaker')
+						+Tag('extension')
+						+Tag('android')
+						+Tag('ios')
 
-					+scroll-card-smol('Minesweeper Discord Bot', 'https://github.com/AntonBergaker/MinesweeperDiscordBot', 'images/minesweeper_discord_bot.png')
-						li(style='background-color: #953DAC') C#
+					+ScrollCardSmol('Minesweeper Discord Bot', 'https://github.com/AntonBergaker/MinesweeperDiscordBot', 'images/minesweeper_discord_bot.png')
+						+Tag('csharp')
 
-					+scroll-card-smol('Small Pentapop Localization Tool', 'https://github.com/AntonBergaker/small_pp_localization_tool', 'images/small_pp.png')
-						li(style='background-color: #953DAC') C#
-						li(style='background-color: #1CA972') GameMaker
+					+ScrollCardSmol('Small Pentapop Localization Tool', 'https://github.com/AntonBergaker/small_pp_localization_tool', 'images/small_pp.png')
+						+Tag('csharp')
+						+Tag('gamemaker')
 
-					+scroll-card-smol('Personal video and image host', 'https://github.com/AntonBergaker/img.bergaker.com', 'images/image_host.png')
-						li(style='background-color: #2B7489') TypeScript
+					+ScrollCardSmol('Personal video and image host', 'https://github.com/AntonBergaker/img.bergaker.com', 'images/image_host.png')
+						+Tag('typescript')
 
-					+scroll-card-smol('anton.bergaker.com', 'https://github.com/AntonBergaker/anton.bergaker.com', 'images/anton_bergaker_com.png')
-						li(style='background-color: #E34C26') HTML5
+					+ScrollCardSmol('anton.bergaker.com', 'https://github.com/AntonBergaker/anton.bergaker.com', 'images/anton_bergaker_com.png')
+						+Tag('html5')
 
-					+scroll-card-smol('Decimal Time', '/decimaltime/', 'images/decimal_time.png')
-						li(style='background-color: #296D98') "Blog Post"
-						li(style='background-color: #E34C26') HTML5
+					+ScrollCardSmol('Decimal Time', '/decimaltime/', 'images/decimal_time.png')
+						+Tag('blog_post')
+						+Tag('html5')
 
-					+scroll-card-smol('SplitTask', 'https://github.com/AntonBergaker/SplitTask', 'images/splittask_banner.png')
-						li(style='background-color: #953DAC') C#
+					+ScrollCardSmol('SplitTask', 'https://github.com/AntonBergaker/SplitTask', 'images/splittask_banner.png')
+						+Tag('csharp')
 
 		script
 			include js/main.js
