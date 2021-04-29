@@ -2,3 +2,4 @@
 node_modules/
 out/
 externally_made_stuff/
+make_and_upload.ps1
