@@ -9,7 +9,7 @@ let mottos = [
     "We'll burn that bridge when we get there",
     "Let's add it to a list! Let's add the list to a list!",
     "You can do it 🎉",
-	"But can we make it cuter?",
+	"Send me cute things!",
 	"This message only appears if you're cute"
 ];
 let motto = document.getElementById("motto");
