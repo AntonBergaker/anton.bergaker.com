@@ -1,23 +1,32 @@
 {
   "name": "anton.bergaker.com",
   "version": "1.0.0",
-  "description": "My website",
-  "main": "index.js",
-  "scripts": {
-    "debug": "node \"index.js\"",
-    "build": "make.ps1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/AntonBergaker/anton.bergaker.com"
-  },
+  "private": true,
+  "description": "anton.bergaker.com",
+  "author": "Anton",
   "keywords": [
-    "anton"
+    "gatsby"
   ],
-  "author": "Anton Bergåker",
-  "license": "ISC",
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean"
+  },
   "dependencies": {
-    "express": "^4.17.1",
-    "pug": "^3.0.2"
+    "gatsby": "^3.4.1",
+    "gatsby-plugin-react-helmet": "^4.4.0",
+    "gatsby-plugin-sass": "^4.4.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-helmet": "^6.1.0",
+    "sass": "^1.32.12"
+  },
+  "devDependencies": {
+    "@types/react-helmet": "^6.1.1",
+    "prettier": "^2.3.0",
+    "typescript": "^4.2.4",
+    "typescript-plugin-css-modules": "^3.2.0"
   }
 }

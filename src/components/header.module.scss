@@ -1,0 +1,52 @@
+.header {
+    background-color: #32343b;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    top: 0px;
+    left: 0px;
+    height: 120px;
+
+    a {
+        text-decoration: none;
+    }
+
+    h1 {
+        font-family: 'Roboto Thin';
+        font-size: 36px;
+        padding-left: 50px;
+        padding-top: 20px;
+        margin: 0;
+        color: #ffffff;
+        display: inline-block;
+    }
+
+    p {
+        font-family: 'Roboto';
+        color: #eeeeee;
+        padding-left: 60px;
+        margin-top: 10px;
+    }
+    .firstName {
+        font-family: 'Roboto Light';
+        color: #e32c2c;
+    }
+
+    .contact_links {
+        position: absolute;
+        top: 30px;
+        right: 50px;
+
+        a {
+            padding: 0;
+            margin: 0;
+            margin-left: 20px;
+            margin-right: 20px;
+            font-size: 50px;
+            color: #fff;
+        }
+        a:hover {
+            color: #e32c2c;
+        }
+    }
+}
