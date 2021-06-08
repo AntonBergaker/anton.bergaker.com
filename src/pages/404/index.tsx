@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Link } from 'gatsby';
-import { yourMom } from './404.module.scss';
+import { yourMom } from './index.module.scss';
 
 // markup
 const NotFoundPage = () => {

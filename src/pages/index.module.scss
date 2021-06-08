@@ -1,0 +1,37 @@
+.mainPage {
+    padding-left: 30px;
+    margin: auto;
+    max-width: 1500px;
+}
+.scroller {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #1e2029;
+}
+p {
+    font-family: 'Roboto';
+    color: #eeeeee;
+    padding-left: 30px;
+    margin-top: 10px;
+    padding-right: 30px;
+}
+h2 {
+    font-family: 'Roboto Thin';
+    color: #eeeeee;
+}
+h3 {
+    color: #fff;
+    font-family: 'Roboto';
+}
+a {
+    margin: 0;
+    padding: 0;
+}

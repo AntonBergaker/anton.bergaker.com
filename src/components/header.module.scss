@@ -32,7 +32,7 @@
         color: #e32c2c;
     }
 
-    .contact_links {
+    .contactLinks {
         position: absolute;
         top: 30px;
         right: 50px;
@@ -42,11 +42,35 @@
             margin: 0;
             margin-left: 20px;
             margin-right: 20px;
-            font-size: 50px;
             color: #fff;
+
+            svg {
+                width: 52px;
+            }
         }
         a:hover {
             color: #e32c2c;
+        }
+
+        @media (max-width: 720px) {
+            position: relative;
+            padding-bottom: 20px;
+            top: 0;
+            right: 0;
+
+            a svg {
+                width: 40px;
+            }
+        }
+    }
+
+    @media (max-width: 720px) {
+        height: 100%;
+        text-align: center;
+
+        h1,
+        p {
+            padding-left: 0px;
         }
     }
 }
