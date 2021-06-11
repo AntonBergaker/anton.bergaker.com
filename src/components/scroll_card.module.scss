@@ -49,11 +49,20 @@
             top: 0;
         }
     }
+
+    @media (max-width: 450px) {
+        flex: 0 0.5 100%;
+        min-width: unset;
+    }
 }
 
 .scrollCardSmol {
     max-width: 270px;
     min-width: 270px;
+
+    @media (max-width: 450px) {
+        min-width: unset;
+    }
 
     .imageContainer {
         padding-top: 56.2903225806452%;

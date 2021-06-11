@@ -1,6 +1,14 @@
 import * as React from 'react';
 import { Helmet } from 'react-helmet';
-import { header, firstName, contactLinks } from './header.module.scss';
+import {
+    header,
+    firstName,
+    contactLinks,
+    diagonalLine,
+    twitterIcon,
+    githubIcon,
+    mailIcon,
+} from './header.module.scss';
 
 // markup
 const Header = () => {
@@ -16,6 +24,7 @@ const Header = () => {
                 <div className={contactLinks}>
                     <a href='https://twitter.com/DragonCoke'>
                         <svg
+                            className={twitterIcon}
                             aria-hidden='true'
                             focusable='false'
                             xmlns='http://www.w3.org/2000/svg'
@@ -29,6 +38,7 @@ const Header = () => {
                     </a>
                     <a href='https://github.com/AntonBergaker'>
                         <svg
+                            className={githubIcon}
                             aria-hidden='true'
                             focusable='false'
                             xmlns='http://www.w3.org/2000/svg'
@@ -42,6 +52,7 @@ const Header = () => {
                     </a>
                     <a href='mailto:anton@bergaker.com'>
                         <svg
+                            className={mailIcon}
                             aria-hidden='true'
                             focusable='false'
                             xmlns='http://www.w3.org/2000/svg'
@@ -53,6 +64,28 @@ const Header = () => {
                             ></path>
                         </svg>
                     </a>
+                </div>
+                <div className={diagonalLine}>
+                    <svg preserveAspectRatio='none' viewBox='0 0 100 100'>
+                        <polygon
+                            points='0,0 0,100 100,85 100,0'
+                            style={{
+                                fill: '#D51F3E',
+                            }}
+                        />
+                    </svg>
+                    <svg
+                        overflow='visible'
+                        preserveAspectRatio='none'
+                        viewBox='0 0 100 100'
+                    >
+                        <polygon
+                            points='0,-1000 0,93 100,30 100,-1000'
+                            style={{
+                                fill: '#1F2022',
+                            }}
+                        />
+                    </svg>
                 </div>
             </div>
             <script
