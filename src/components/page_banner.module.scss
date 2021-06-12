@@ -1,0 +1,28 @@
+.pageBanner {
+    width: 90%;
+    max-width: 1000px;
+    text-align: center;
+    margin: auto;
+}
+
+.largeImage,
+.mobileImage {
+    margin: auto;
+}
+
+.largeImage {
+    visibility: visible;
+    display: block;
+    @media (max-width: 600px) {
+        visibility: hidden;
+        display: none;
+    }
+}
+.mobileImage {
+    visibility: hidden;
+    display: none;
+    @media (max-width: 600px) {
+        visibility: visible;
+        display: block;
+    }
+}

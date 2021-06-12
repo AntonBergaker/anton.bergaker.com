@@ -1,0 +1,57 @@
+.brandButton {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 22px;
+    margin: 0;
+    padding: 0;
+
+    p {
+        margin: 0;
+        margin-left: 30px;
+        margin-right: 22px;
+        padding: 0;
+    }
+}
+
+a.brandButtonLink {
+    text-decoration: none;
+    margin: 20px;
+    padding: 0;
+    color: white;
+    :hover p {
+        text-decoration: underline;
+        color: #e32c2c;
+    }
+}
+
+.imageWrapper {
+    padding: 0;
+    margin: 5px 5px 5px 15px;
+    height: 40px;
+
+    svg,
+    img {
+        height: 40px;
+    }
+}
+
+.elementContainer {
+    background-color: #343434;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.diagonalLine {
+    margin: 0;
+    padding: 0;
+    height: 10px;
+    position: relative;
+    svg {
+        position: absolute;
+        width: 100%;
+        height: 10px;
+    }
+}

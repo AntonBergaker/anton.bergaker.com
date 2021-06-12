@@ -1,15 +1,22 @@
 import * as React from 'react';
 import { Helmet } from 'react-helmet';
-import { mainPage, scroller } from './index.module.scss';
 import { graphql } from 'gatsby';
+import { mainPage } from './index.module.scss';
 import Header from '../components/header';
 import ScrollCard from '../components/scroll_card';
 import ScrollCardTag, { TagNames } from '../components/scroll_card_tag';
 import ScrollCardSmol from '../components/scroll_card_smol';
 import Tags from '../components/tags';
+import Scroller from '../components/scroller';
+import Page from '../components/page';
+import Content from '../components/content';
+
+interface Props {
+    data: any;
+}
 
 // markup
-const IndexPage = ({ data }: any) => {
+const IndexPage = ({ data }: Props) => {
     const mainProjects = data.allProjectsJson.nodes
         .filter((x: any) => x.major_project == true)
         .map((x: any) => {
@@ -60,15 +67,19 @@ const IndexPage = ({ data }: any) => {
                     'the story goes on',
                 ]}
             />
-            <Header />
-            <div className={mainPage}>
-                <section>
-                    <h2>Projects</h2>
-                    <div className={scroller}>{mainProjects}</div>
-                    <h2>Other things</h2>
-                    <div className={scroller}>{smallProjects}</div>
-                </section>
-            </div>
+            <Page>
+                <Header />
+                <Content>
+                    <div className={mainPage}>
+                        <section>
+                            <h2>Projects</h2>
+                            <Scroller>{mainProjects}</Scroller>
+                            <h2>Other things</h2>
+                            <Scroller>{smallProjects}</Scroller>
+                        </section>
+                    </div>
+                </Content>
+            </Page>
         </>
     );
 };

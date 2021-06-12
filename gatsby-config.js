@@ -22,5 +22,17 @@ module.exports = {
                 name: `src`,
             },
         },
+        'gatsby-plugin-no-javascript',
+        {
+            resolve: 'gatsby-plugin-no-javascript-utils',
+            options: {
+                noSourcemaps: true,
+                removeGeneratorTag: true,
+                removeReactHelmetAttrs: true,
+                noInlineStyles: false,
+                removeGatsbyAnnouncer: true,
+                removePreloadLinks: true,
+            },
+        },
     ],
 };

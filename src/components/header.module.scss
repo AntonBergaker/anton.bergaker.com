@@ -13,13 +13,20 @@
     }
 
     h1 {
-        font-family: 'Roboto Light';
+        font-family: 'Roboto', sans-serif;
+        font-weight: 300;
         font-size: 40px;
-        padding-left: 50px;
-        padding-top: 40px;
         margin: 0;
+        margin-left: 50px;
+        margin-top: 40px;
         color: #ffffff;
         display: inline-block;
+
+        .firstName {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 500;
+            color: #e32c2c;
+        }
     }
 
     p {
@@ -27,10 +34,6 @@
         color: #eeeeee;
         padding-left: 60px;
         margin-top: 10px;
-    }
-    .firstName {
-        font-family: 'Roboto';
-        color: #e32c2c;
     }
 
     .contactLinks {
@@ -74,16 +77,16 @@
     }
 
     .diagonalLine {
+        position: relative;
+        z-index: -5;
         svg {
-            top: 100px;
+            top: -30px;
             position: absolute;
             width: 100%;
             height: 50px;
-            z-index: -50;
         }
 
         @media (max-width: 720px) {
-            position: relative;
             text-align: left;
 
             svg {
