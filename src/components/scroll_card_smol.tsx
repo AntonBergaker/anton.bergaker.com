@@ -1,4 +1,6 @@
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import * as React from 'react';
+
 import { ScrollCardProps } from './scroll_card';
 import {
     scrollCard,
@@ -7,7 +9,6 @@ import {
     tags,
     actualImage,
 } from './scroll_card.module.scss';
-import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
 // markup
 const ScrollCardSmol = (props: ScrollCardProps) => {

@@ -1,15 +1,15 @@
-import * as React from 'react';
-import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
-import { mainPage } from './index.module.scss';
-import Header from '../components/header';
-import ScrollCard from '../components/scroll_card';
-import ScrollCardTag, { TagNames } from '../components/scroll_card_tag';
-import ScrollCardSmol from '../components/scroll_card_smol';
-import Tags from '../components/tags';
-import Scroller from '../components/scroller';
-import Page from '../components/page';
+import * as React from 'react';
+
 import Content from '../components/content';
+import Header from '../components/header';
+import Page from '../components/page';
+import ScrollCard from '../components/scroll_card';
+import ScrollCardSmol from '../components/scroll_card_smol';
+import ScrollCardTag from '../components/scroll_card_tag';
+import Scroller from '../components/scroller';
+import Tags from '../components/tags';
+import { mainPage } from './index.module.scss';
 
 interface Props {
     data: any;

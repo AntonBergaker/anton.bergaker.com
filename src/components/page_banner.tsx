@@ -1,5 +1,6 @@
 import { getImage, ImageDataLike, StaticImage } from 'gatsby-plugin-image';
 import * as React from 'react';
+
 import { pageBanner, largeImage, mobileImage } from './page_banner.module.scss';
 
 export type PageBannerProps = {

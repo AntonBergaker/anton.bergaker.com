@@ -1,10 +1,11 @@
 import * as React from 'react';
+
 import {
     brandButton,
     brandButtonLink,
-    imageWrapper,
-    elementContainer,
     diagonalLine,
+    elementContainer,
+    imageWrapper,
 } from './brand_button.module.scss';
 
 export interface BrandButtonProps {
