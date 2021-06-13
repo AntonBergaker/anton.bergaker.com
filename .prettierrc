@@ -2,7 +2,7 @@
     "arrowParens": "avoid",
     "jsxSingleQuote": true,
     "semi": true,
-    "singleQuote": true,
+    "singleQuote": false,
     "trailingComma": "all",
     "tabWidth": 4,
     "importOrder": ["^@core/(.*)$", "^@server/(.*)$", "^@ui/(.*)$", "^[./]"],

@@ -1,6 +1,6 @@
-import * as React from 'react';
+import * as React from "react";
 
-import { scroller } from './scroller.module.scss';
+import { scroller } from "./scroller.module.scss";
 
 export type ScrollerProps = React.PropsWithChildren<{}>;
 

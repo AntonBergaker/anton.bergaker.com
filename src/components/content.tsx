@@ -1,6 +1,6 @@
-import * as React from 'react';
+import * as React from "react";
 
-import { content } from './content.module.scss';
+import { content } from "./content.module.scss";
 
 export type ContentProps = React.PropsWithChildren<{}>;
 

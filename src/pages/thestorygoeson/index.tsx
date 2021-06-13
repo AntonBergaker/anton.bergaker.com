@@ -1,14 +1,14 @@
-import { StaticImage } from 'gatsby-plugin-image';
-import * as React from 'react';
+import { StaticImage } from "gatsby-plugin-image";
+import * as React from "react";
 
-import BrandButtonPremade from '../../components/brand_button_premade';
-import Content from '../../components/content';
-import Header from '../../components/header';
-import ProjectPageLayout from '../../components/layouts/project_page';
-import Page from '../../components/page';
-import PageBanner from '../../components/page_banner';
-import Scroller from '../../components/scroller';
-import Tags from '../../components/tags';
+import BrandButtonPremade from "../../components/brand_button_premade";
+import Content from "../../components/content";
+import Header from "../../components/header";
+import ProjectPageLayout from "../../components/layouts/project_page";
+import Page from "../../components/page";
+import PageBanner from "../../components/page_banner";
+import Scroller from "../../components/scroller";
+import Tags from "../../components/tags";
 
 // markup
 const IndexPage = () => {
@@ -18,16 +18,16 @@ const IndexPage = () => {
                 title='The Story Goes On'
                 description='Brief overview of my work on The Story Goes On'
                 keywords={[
-                    'programming',
-                    'programmer',
-                    'gamedev',
-                    'game',
-                    'the story goes on',
-                    'xbox',
-                    'steam',
-                    'switch',
-                    'nintendo switch',
-                    'scarecrow arts',
+                    "programming",
+                    "programmer",
+                    "gamedev",
+                    "game",
+                    "the story goes on",
+                    "xbox",
+                    "steam",
+                    "switch",
+                    "nintendo switch",
+                    "scarecrow arts",
                 ]}
             />
             <PageBanner

@@ -1,14 +1,14 @@
-import { StaticImage } from 'gatsby-plugin-image';
-import * as React from 'react';
+import { StaticImage } from "gatsby-plugin-image";
+import * as React from "react";
 
-import BrandButtonPremade from '../../components/brand_button_premade';
-import Content from '../../components/content';
-import Header from '../../components/header';
-import ProjectPageLayout from '../../components/layouts/project_page';
-import Page from '../../components/page';
-import PageBanner from '../../components/page_banner';
-import Scroller from '../../components/scroller';
-import Tags from '../../components/tags';
+import BrandButtonPremade from "../../components/brand_button_premade";
+import Content from "../../components/content";
+import Header from "../../components/header";
+import ProjectPageLayout from "../../components/layouts/project_page";
+import Page from "../../components/page";
+import PageBanner from "../../components/page_banner";
+import Scroller from "../../components/scroller";
+import Tags from "../../components/tags";
 
 // markup
 const IndexPage = () => {
@@ -18,14 +18,14 @@ const IndexPage = () => {
                 title='Pentapop'
                 description='Brief information about my gomoku game Pentapop, as well as a link where you can play it.'
                 keywords={[
-                    'programming',
-                    'programmer',
-                    'app',
-                    'gamedev',
-                    'game',
-                    'gomoku',
-                    'five in a row',
-                    'online',
+                    "programming",
+                    "programmer",
+                    "app",
+                    "gamedev",
+                    "game",
+                    "gomoku",
+                    "five in a row",
+                    "online",
                 ]}
             />
             <PageBanner

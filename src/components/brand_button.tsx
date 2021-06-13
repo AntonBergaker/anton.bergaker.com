@@ -1,4 +1,4 @@
-import * as React from 'react';
+import * as React from "react";
 
 import {
     brandButton,
@@ -6,7 +6,7 @@ import {
     diagonalLine,
     elementContainer,
     imageWrapper,
-} from './brand_button.module.scss';
+} from "./brand_button.module.scss";
 
 export interface BrandButtonProps {
     link: string;

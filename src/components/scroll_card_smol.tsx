@@ -1,28 +1,28 @@
-import { GatsbyImage, getImage } from 'gatsby-plugin-image';
-import * as React from 'react';
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import * as React from "react";
 
-import { ScrollCardProps } from './scroll_card';
+import { ScrollCardProps } from "./scroll_card";
 import {
     scrollCard,
     scrollCardSmol,
     imageContainer,
     tags,
     actualImage,
-} from './scroll_card.module.scss';
+} from "./scroll_card.module.scss";
 
 // markup
 const ScrollCardSmol = (props: ScrollCardProps) => {
     const image = getImage(props.image);
     if (image == undefined) {
-        throw 'Image not found for ' + props.title;
+        throw "Image not found for " + props.title;
     }
     return (
-        <a className={scrollCard + ' ' + scrollCardSmol} href={props.link}>
+        <a className={scrollCard + " " + scrollCardSmol} href={props.link}>
             <div className={imageContainer}>
                 <GatsbyImage
                     className={actualImage}
                     image={image}
-                    alt={props.title + ' Banner'}
+                    alt={props.title + " Banner"}
                 />
             </div>
             <ul className={tags}>{props.children}</ul>

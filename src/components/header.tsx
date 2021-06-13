@@ -1,5 +1,5 @@
-import * as React from 'react';
-import { Helmet } from 'react-helmet';
+import * as React from "react";
+import { Helmet } from "react-helmet";
 
 import {
     header,
@@ -9,8 +9,8 @@ import {
     twitterIcon,
     githubIcon,
     mailIcon,
-} from './header.module.scss';
-import GithubSvg from './svgs/github';
+} from "./header.module.scss";
+import GithubSvg from "./svgs/github";
 
 // markup
 const Header = () => {
@@ -61,7 +61,7 @@ const Header = () => {
                         <polygon
                             points='0,0 0,100 100,85 100,0'
                             style={{
-                                fill: '#D51F3E',
+                                fill: "#D51F3E",
                             }}
                         />
                     </svg>
@@ -73,7 +73,7 @@ const Header = () => {
                         <polygon
                             points='0,-1000 0,93 100,30 100,-1000'
                             style={{
-                                fill: '#1F2022',
+                                fill: "#1F2022",
                             }}
                         />
                     </svg>

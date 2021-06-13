@@ -1,5 +1,5 @@
-import * as React from 'react';
-import { Helmet } from 'react-helmet';
+import * as React from "react";
+import { Helmet } from "react-helmet";
 
 interface TagProps {
     title: string;
@@ -11,8 +11,8 @@ const Tags = (props: TagProps) => {
     return (
         <Helmet>
             <title>{props.title}</title>
-            <meta name={'description'} content={props.description} />
-            <meta name='keywords' content={props.keywords.join(', ')} />
+            <meta name={"description"} content={props.description} />
+            <meta name='keywords' content={props.keywords.join(", ")} />
             <meta charSet='utf-8' />
             <meta
                 name='viewport'

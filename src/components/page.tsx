@@ -1,6 +1,6 @@
-import * as React from 'react';
+import * as React from "react";
 
-import { page } from './page.module.scss';
+import { page } from "./page.module.scss";
 
 export type PageProps = React.PropsWithChildren<{}>;
 

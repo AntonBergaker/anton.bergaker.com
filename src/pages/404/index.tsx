@@ -1,11 +1,11 @@
-import { StaticImage } from 'gatsby-plugin-image';
-import * as React from 'react';
+import { StaticImage } from "gatsby-plugin-image";
+import * as React from "react";
 
-import Content from '../../components/content';
-import Header from '../../components/header';
-import Page from '../../components/page';
-import Tags from '../../components/tags';
-import { fourOhFour, image } from './index.module.scss';
+import Content from "../../components/content";
+import Header from "../../components/header";
+import Page from "../../components/page";
+import Tags from "../../components/tags";
+import { fourOhFour, image } from "./index.module.scss";
 
 // markup
 const IndexPage = () => {
@@ -14,7 +14,7 @@ const IndexPage = () => {
             <Tags
                 title='Four oh four'
                 description="It's gone"
-                keywords={['programming', 'programmer', 'error', '404']}
+                keywords={["programming", "programmer", "error", "404"]}
             />
             <Page>
                 <Header />

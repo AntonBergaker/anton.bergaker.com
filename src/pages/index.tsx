@@ -1,15 +1,15 @@
-import { graphql } from 'gatsby';
-import * as React from 'react';
+import { graphql } from "gatsby";
+import * as React from "react";
 
-import Content from '../components/content';
-import Header from '../components/header';
-import Page from '../components/page';
-import ScrollCard from '../components/scroll_card';
-import ScrollCardSmol from '../components/scroll_card_smol';
-import ScrollCardTag from '../components/scroll_card_tag';
-import Scroller from '../components/scroller';
-import Tags from '../components/tags';
-import { mainPage } from './index.module.scss';
+import Content from "../components/content";
+import Header from "../components/header";
+import Page from "../components/page";
+import ScrollCard from "../components/scroll_card";
+import ScrollCardSmol from "../components/scroll_card_smol";
+import ScrollCardTag from "../components/scroll_card_tag";
+import Scroller from "../components/scroller";
+import Tags from "../components/tags";
+import { mainPage } from "./index.module.scss";
 
 interface Props {
     data: any;
@@ -57,14 +57,14 @@ const IndexPage = ({ data }: Props) => {
                 title='Anton Bergåker'
                 description='Your one stop shop for everything made by Anton Bergåker. Projects and games, many playable in your browser.'
                 keywords={[
-                    'programming',
-                    'programmer',
-                    'gamedev',
-                    'gamedevelopment',
-                    'game',
-                    'gamemaker',
-                    'csharp',
-                    'the story goes on',
+                    "programming",
+                    "programmer",
+                    "gamedev",
+                    "gamedevelopment",
+                    "game",
+                    "gamemaker",
+                    "csharp",
+                    "the story goes on",
                 ]}
             />
             <Page>

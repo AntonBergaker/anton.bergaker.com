@@ -1,9 +1,9 @@
-import * as React from 'react';
+import * as React from "react";
 
-import Content from '../content';
-import Header from '../header';
-import Page from '../page';
-import { projectPage } from './project_page.module.scss';
+import Content from "../content";
+import Header from "../header";
+import Page from "../page";
+import { projectPage } from "./project_page.module.scss";
 
 export type ProjectPageLayoutProps = React.PropsWithChildren<{}>;
 
