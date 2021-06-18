@@ -57,6 +57,13 @@
     },
     {
         "major_project": false,
+        "name": "Petrock Rocket Racing",
+        "url": "/petrock_rocket_racing",
+        "image": "../pages/card_images/petrock_rocket_racing.png",
+        "tags": ["play_in_browser", "gamemaker", "game_jam"]
+    },
+    {
+        "major_project": false,
         "name": "Xtreme Xplosive Fishing",
         "url": "/xtreme_xplosive_fishing",
         "image": "../pages/card_images/xtreme_xplosive_fishing.png",

@@ -39,15 +39,22 @@ const Tags = (props: TagProps) => {
                 rel='stylesheet'
             />
             <meta property='og:title' content={props.title} />
+            <meta property='og:description' content={props.description} />
             <meta property='og:type' content='website' />
             <meta
                 property='og:image'
                 content='https://anton.bergaker.com/avatar.png'
             />
-            <meta property='og:description' content={props.description} />
+            <meta
+                property='og:image:secure_url'
+                content='https://anton.bergaker.com/avatar.png'
+            />
             <meta property='og:image:width' content='492' />
             <meta property='og:image:height' content='492' />
-            <meta property='og:url' content='https://anton.bergaker.com' />
+            <meta
+                property='og:image:alt'
+                content="A cartoony scarecrow, Anton's avatar"
+            />
             <meta name='twitter:title' content={props.title} />
             <meta name='twitter:card' content='summary' />
             <meta name='twitter:author' content='Anton Bergåker' />
