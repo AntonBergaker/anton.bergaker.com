@@ -1,5 +1,6 @@
-*/.vscode/*
 node_modules/
+.cache/
+public
 out/
 externally_made_stuff/
 make_and_upload.ps1

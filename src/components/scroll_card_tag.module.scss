@@ -1,0 +1,28 @@
+.scrollCardTag {
+    text-align: center;
+    display: inline-block;
+    margin: 4px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    color: #fff;
+}
+
+.tagWrapper {
+    padding: 4px 8px 4px 8px;
+    position: relative;
+    display: block;
+}
+
+.text {
+    position: relative;
+    z-index: 1;
+}
+
+.background {
+    --display: none;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+}

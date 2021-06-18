@@ -1,0 +1,22 @@
+.fourOhFour {
+    text-align: center;
+    margin: 0 auto;
+
+    > h1 {
+        font-family: 'Roboto', sans-serif;
+        font-weight: 300;
+        font-size: 3em;
+        color: #eee;
+    }
+    > p {
+        font-family: 'Roboto', sans-serif;
+        font-weight: 500;
+        color: #eee;
+    }
+
+    .image {
+        margin-top: 80px;
+        width: 400px;
+        max-width: 70%;
+    }
+}
