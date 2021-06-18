@@ -1,7 +1,12 @@
-import { getImage, ImageDataLike, StaticImage } from "gatsby-plugin-image";
 import * as React from "react";
 
-import { pageBanner, largeImage, mobileImage } from "./page_banner.module.scss";
+import {
+    pageBanner,
+    largeImage,
+    mobileImage,
+    largeWrapper,
+    mobileWrapper,
+} from "./page_banner.module.scss";
 
 export type PageBannerProps = {
     largeImage: JSX.Element;
@@ -10,18 +15,21 @@ export type PageBannerProps = {
 };
 
 const PageBanner = (props: PageBannerProps) => {
+    const largeClone = React.cloneElement(props.largeImage, {
+        ...props.largeImage.props,
+        className: largeImage,
+        alt: props.alt,
+    });
+    const mobileClone = React.cloneElement(props.mobileImage, {
+        ...props.mobileImage.props,
+        className: mobileImage,
+        alt: props.alt,
+    });
+
     return (
         <div className={pageBanner}>
-            <StaticImage
-                {...props.largeImage.props}
-                className={largeImage}
-                alt={props.alt}
-            />
-            <StaticImage
-                {...props.mobileImage.props}
-                className={mobileImage}
-                alt={props.alt}
-            />
+            <div className={largeWrapper}>{largeClone}</div>
+            <div className={mobileWrapper}>{mobileClone}</div>
         </div>
     );
 };

@@ -1,5 +1,5 @@
 .header {
-    background-color: none;
+    background-color: transparent;
     width: 100%;
     margin: 0;
     padding: 0;
@@ -13,7 +13,7 @@
     }
 
     h1 {
-        font-family: 'Roboto', sans-serif;
+        font-family: "Roboto", sans-serif;
         font-weight: 300;
         font-size: 40px;
         margin: 0;
@@ -23,14 +23,14 @@
         display: inline-block;
 
         .firstName {
-            font-family: 'Roboto', sans-serif;
+            font-family: "Roboto", sans-serif;
             font-weight: 500;
             color: #e32c2c;
         }
     }
 
     p {
-        font-family: 'Roboto';
+        font-family: "Roboto";
         color: #eeeeee;
         padding-left: 60px;
         margin-top: 10px;

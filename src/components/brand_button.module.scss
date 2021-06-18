@@ -1,5 +1,5 @@
 .brandButton {
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
     font-weight: 400;
     font-size: 22px;
     margin: 0;
@@ -21,6 +21,10 @@ a.brandButtonLink {
     :hover p {
         text-decoration: underline;
         color: #e32c2c;
+    }
+
+    @media (max-width: 600px) {
+        flex-basis: 100%;
     }
 }
 

@@ -7,7 +7,6 @@ import {
     scrollCardSmol,
     imageContainer,
     tags,
-    actualImage,
 } from "./scroll_card.module.scss";
 
 // markup
@@ -19,11 +18,7 @@ const ScrollCardSmol = (props: ScrollCardProps) => {
     return (
         <a className={scrollCard + " " + scrollCardSmol} href={props.link}>
             <div className={imageContainer}>
-                <GatsbyImage
-                    className={actualImage}
-                    image={image}
-                    alt={props.title + " Banner"}
-                />
+                <GatsbyImage image={image} alt={props.title + " Banner"} />
             </div>
             <ul className={tags}>{props.children}</ul>
             <h3>{props.title}</h3>

@@ -16,7 +16,7 @@
     {
         "major_project": true,
         "name": "miniSweeper",
-        "url": "/miniSweeper",
+        "url": "/minisweeper",
         "image": "../pages/card_images/minisweeper.png",
         "tags": ["play_in_browser", "gamemaker", "android", "ios"]
     },

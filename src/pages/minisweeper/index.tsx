@@ -15,25 +15,23 @@ const IndexPage = () => {
     return (
         <ProjectPageLayout>
             <Tags
-                title='Pentapop'
-                description='Brief information about my gomoku game Pentapop, as well as a link where you can play it.'
+                title='Anton Bergåker - miniSweeper'
+                description='Brief information about my MineSweeper clone miniSweeper, as well as a links to where you can play it.'
                 keywords={[
                     "programming",
                     "programmer",
                     "app",
                     "gamedev",
                     "game",
-                    "gomoku",
-                    "five in a row",
-                    "online",
+                    "minesweeper",
                 ]}
             />
             <PageBanner
                 largeImage={
-                    <StaticImage src='./banner_pentapop_large.png' alt='' />
+                    <StaticImage src='./banner_minisweeper_large.png' alt='' />
                 }
                 mobileImage={
-                    <StaticImage src='./banner_pentapop_mobile.png' alt='' />
+                    <StaticImage src='./banner_minisweeper_mobile.png' alt='' />
                 }
                 alt='Pentapop Banner'
             />
@@ -41,17 +39,27 @@ const IndexPage = () => {
                 <BrandButtonPremade
                     text='Get it on Google Play'
                     brand='google_play'
-                    link='https://play.google.com/store/apps/details?id=com.AntonBergaker.Pentapop'
+                    link='https://play.google.com/store/apps/details?id=com.AntonBergaker.minisweeper'
                 />
                 <BrandButtonPremade
                     text='Get it on the App Store'
                     brand='app_store'
-                    link='https://apps.apple.com/us/app/pentapop/id1463884191'
+                    link='https://itunes.apple.com/us/app/minisweeper/id1363589808'
                 />
                 <BrandButtonPremade
                     text='Play in Browser'
                     brand='website'
-                    link='/pentapop/play'
+                    link='/minisweeper/play'
+                />
+                <BrandButtonPremade
+                    text='View on Github'
+                    brand='github'
+                    link='https://github.com/AntonBergaker/miniSweeper'
+                />
+                <BrandButtonPremade
+                    text='Download for Windows'
+                    brand='windows'
+                    link='/minisweeper/miniSweeper.1.0.9.zip'
                 />
             </Scroller>
             <div>

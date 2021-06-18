@@ -1,3 +1,9 @@
+a:hover.scrollCard h3 {
+    text-decoration: underline;
+    text-decoration-color: #e32c2c;
+    color: #e32c2c;
+}
+
 .scrollCard {
     flex: 1;
     min-width: 400px;
@@ -7,15 +13,9 @@
     margin-bottom: 10px;
     background-color: #343434;
     position: relative;
-    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.6);
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.3);
     text-align: center;
     text-decoration: none;
-
-    :hover h3 {
-        text-decoration: underline;
-        text-decoration-color: #e32c2c;
-        color: #e32c2c;
-    }
 
     .tags {
         text-align: center;
@@ -33,23 +33,16 @@
     }
 
     h3 {
+        color: #eeeeee;
         padding: 10px;
         margin: 0;
-        font-family: 'Roboto', sans-serif;
+        font-family: "Roboto", sans-serif;
         font-weight: 500;
     }
 
     .imageContainer {
         position: relative;
         width: 100%;
-        padding-top: 56.2765957446808%; /* Ratio between image height and width, making it as tall as it's supposed to be before images are loaded */
-
-        .actualImage {
-            position: absolute;
-            height: 100%;
-            left: 0;
-            top: 0;
-        }
     }
 
     @media (max-width: 450px) {
@@ -63,9 +56,5 @@
 
     @media (max-width: 450px) {
         min-width: 80%;
-    }
-
-    .imageContainer {
-        padding-top: 56.2903225806452%;
     }
 }

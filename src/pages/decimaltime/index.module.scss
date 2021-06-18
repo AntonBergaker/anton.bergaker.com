@@ -1,0 +1,29 @@
+.centeredTimers {
+    margin: auto;
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+#timeDisplay {
+    margin-top: 0px;
+    font-size: 50px;
+}
+
+.timerHeader {
+    margin-top: 50px;
+    font-size: 20px;
+}
+.converterContainer {
+    display: inline-block;
+    > input {
+        margin-top: 7px;
+    }
+}
+.timer {
+    font-family: "Roboto Mono", monospace;
+    color: #e32c2c;
+    font-size: 30px;
+}
+.dateConverterPicker {
+    margin: 10px;
+}

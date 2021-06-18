@@ -15,7 +15,7 @@ const IndexPage = () => {
     return (
         <ProjectPageLayout>
             <Tags
-                title='Pentapop'
+                title='Anton Bergåker - Pentapop'
                 description='Brief information about my gomoku game Pentapop, as well as a link where you can play it.'
                 keywords={[
                     "programming",

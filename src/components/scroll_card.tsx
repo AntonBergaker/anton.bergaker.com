@@ -1,12 +1,7 @@
 import { GatsbyImage, getImage, ImageDataLike } from "gatsby-plugin-image";
 import * as React from "react";
 
-import {
-    scrollCard,
-    imageContainer,
-    tags,
-    actualImage,
-} from "./scroll_card.module.scss";
+import { scrollCard, imageContainer, tags } from "./scroll_card.module.scss";
 
 export type ScrollCardProps = React.PropsWithChildren<{
     title: string;
@@ -23,11 +18,7 @@ const ScrollCard = (props: ScrollCardProps) => {
     return (
         <a className={scrollCard} href={props.link}>
             <div className={imageContainer}>
-                <GatsbyImage
-                    className={actualImage}
-                    image={image}
-                    alt={props.title + " Banner"}
-                />
+                <GatsbyImage image={image} alt={props.title + " Banner"} />
             </div>
             <ul className={tags}>{props.children}</ul>
             <h3>{props.title}</h3>

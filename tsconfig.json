@@ -17,5 +17,5 @@
         "resolveJsonModule": true
     },
     "exclude": ["node_modules", "out", "public", "externally_made_stuff"],
-    "include": ["**/*.ts", "**/*.tsx", "index.d.ts"]
+    "include": ["**/*.ts", "**/*.tsx", "index.d.ts", "src/gatsby-ssr.js"]
 }

@@ -7,6 +7,7 @@ import GlobeSvg from "./svgs/globe";
 import GooglePlaySvg from "./svgs/google_play";
 import NintendoSwitchSvg from "./svgs/nintendo_switch";
 import SteamSvg from "./svgs/steam";
+import WindowsSvg from "./svgs/windows";
 import XboxSvg from "./svgs/xbox";
 
 type Brand = {
@@ -15,41 +16,38 @@ type Brand = {
     defaultText: string;
 };
 
-const brands: { [key: string]: Brand } = {
+const brands = {
     website: {
         color: "#56D1F7",
         image: <GlobeSvg />,
-        defaultText: "Open Website",
     },
     xbox: {
         color: "#0F780F",
         image: <XboxSvg />,
-        defaultText: "Open on Microsoft Store",
     },
     switch: {
         color: "#DA121E",
         image: <NintendoSwitchSvg />,
-        defaultText: "Open on Nintendo Store",
     },
     steam: {
         color: "#00AEEF",
         image: <SteamSvg />,
-        defaultText: "Open on Steam",
     },
     google_play: {
         color: "#0AE977",
         image: <GooglePlaySvg />,
-        defaultText: "Open on Google Play",
     },
     app_store: {
         color: "#1AA2F8",
         image: <AppStoreSvg />,
-        defaultText: "Open on App Store",
     },
     github: {
         color: "#9c45aa",
         image: <GithubSvg />,
-        defaultText: "Open on Github",
+    },
+    windows: {
+        color: "#00A8E8",
+        image: <WindowsSvg />,
     },
 };
 
@@ -58,7 +56,7 @@ export type TagNames = keyof typeof brands;
 export interface BrandButtonPremadeProps {
     brand: TagNames;
     link: string;
-    text?: string;
+    text: string;
 }
 
 const BrandButtonPremade = (props: BrandButtonPremadeProps) => {
@@ -68,7 +66,7 @@ const BrandButtonPremade = (props: BrandButtonPremadeProps) => {
         <BrandButton
             image={brand.image}
             color={brand.color}
-            text={props.text ?? brand.defaultText}
+            text={props.text}
             link={props.link}
         ></BrandButton>
     );

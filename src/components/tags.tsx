@@ -9,11 +9,14 @@ interface TagProps {
 
 const Tags = (props: TagProps) => {
     return (
-        <Helmet>
+        <Helmet
+            htmlAttributes={{
+                lang: "en",
+            }}
+        >
             <title>{props.title}</title>
             <meta name={"description"} content={props.description} />
             <meta name='keywords' content={props.keywords.join(", ")} />
-            <meta charSet='utf-8' />
             <meta
                 name='viewport'
                 content='width=device-width, initial-scale=1'
@@ -44,6 +47,7 @@ const Tags = (props: TagProps) => {
             <meta property='og:description' content={props.description} />
             <meta property='og:image:width' content='492' />
             <meta property='og:image:height' content='492' />
+            <meta property='og:url' content='https://anton.bergaker.com' />
             <meta name='twitter:title' content={props.title} />
             <meta name='twitter:card' content='summary' />
             <meta name='twitter:author' content='Anton Bergåker' />

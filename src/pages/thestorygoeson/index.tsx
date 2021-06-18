@@ -15,7 +15,7 @@ const IndexPage = () => {
     return (
         <ProjectPageLayout>
             <Tags
-                title='The Story Goes On'
+                title='Anton Bergåker - The Story Goes On'
                 description='Brief overview of my work on The Story Goes On'
                 keywords={[
                     "programming",
