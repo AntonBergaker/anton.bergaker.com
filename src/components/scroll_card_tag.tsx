@@ -23,6 +23,8 @@ const colors = {
     game_jam: { name: "Game Jam", color: "#A45EE5" },
     blog_post: { name: "Blog Post", color: "#296D98" },
     extension: { name: "Extension", color: "#FB422D" },
+    wpf: { name: "WPF", color: "#774CE0" },
+    unity3d: { name: "Unity 3D", color: "#111111" }
 };
 export type TagNames = keyof typeof colors;
 
@@ -51,7 +53,12 @@ const ScrollCardTag = (props: ScrollCardTagProps | ScrollCardCustomProps) => {
     if ("tag" in localProps) {
         localProps = { ...colors[localProps.tag], ...localProps };
     }
-    const polyArray = localProps.name!.length < 5 ? thinPolys : thickPolys;
+
+    if (localProps.name == null) {
+        throw `Issue reading the tag name for ${JSON.stringify(localProps)}`;
+    }
+
+    const polyArray = localProps.name.length < 5 ? thinPolys : thickPolys;
     const poly = polyArray[Math.floor(Math.random() * polyArray.length)];
     const coloredPoly = React.cloneElement(poly, {
         ...poly.props,

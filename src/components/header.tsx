@@ -94,11 +94,11 @@ const Header = () => {
                 "Let's add it to a list! Let's add the list to a list!",
                 "You can do it 🎉",
                 "Send me cute things!",
-                "This message only appears if you're cute"
+                "This message only appears if you're cute",
+                "Those that commit last, commits longest",
             ];
             const motto = document.getElementById("motto");
             motto.innerHTML = mottos[Math.floor(Math.random()*mottos.length)];
-            console.log(motto.innerHtml);
         `,
                 }}
             />

@@ -7,6 +7,7 @@ import GlobeSvg from "./svgs/globe";
 import GooglePlaySvg from "./svgs/google_play";
 import NintendoSwitchSvg from "./svgs/nintendo_switch";
 import SteamSvg from "./svgs/steam";
+import VRChatSvg from "./svgs/vrchat";
 import WindowsSvg from "./svgs/windows";
 import XboxSvg from "./svgs/xbox";
 
@@ -49,6 +50,10 @@ const brands = {
         color: "#00A8E8",
         image: <WindowsSvg />,
     },
+    vrchat: {
+        color: "#094C81",
+        image: <div />,
+    }
 };
 
 export type TagNames = keyof typeof brands;
