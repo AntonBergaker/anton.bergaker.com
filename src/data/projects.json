@@ -114,6 +114,17 @@
     },
     {
         "major_project": false,
+        "name": "Cargo Road",
+        "url": "/cargo_road",
+        "image": "../pages/card_images/cargo_road.png",
+        "tags": [
+            "play_in_browser",
+            "godot",
+            "game_jam"
+        ]
+    },
+    {
+        "major_project": false,
         "name": "Doodle Digits",
         "url": "https://github.com/AntonBergaker/DoodleDigits",
         "image": "../pages/card_images/doodledigits.png",
