@@ -1,0 +1,86 @@
+---
+import Content from "../components/content.astro";
+import Header from "../components/header.astro";
+import Page from "../components/page.astro";
+import ScrollCard from "../components/scroll_card.astro";
+import ScrollCardSmol from "../components/scroll_card_smol.astro";
+import ScrollCardTag from "../components/scroll_card_tag.astro";
+import Scroller from "../components/scroller.astro";
+import Tags from "../components/tags.astro";
+
+import { projects as allProjects } from "../data/projects";
+
+// markup
+
+const mainProjects = allProjects.filter(x => x.major_project == true);
+
+const smallProjects = allProjects.filter(x => x.major_project == false);
+---
+
+<style>
+    .mainPage {
+        h2 {
+            color: #eeeeee;
+            font-weight: 300;
+        }
+        h3 {
+            font-family: "Roboto";
+        }
+    }
+</style>
+
+<Tags
+    title='Anton Bergåker'
+    description='Your one stop shop for everything made by Anton Bergåker. Projects and games, many playable in your browser.'
+    keywords={[
+        "programming",
+        "programmer",
+        "gamedev",
+        "gamedevelopment",
+        "game",
+        "gamemaker",
+        "csharp",
+        "the story goes on",
+    ]}
+/>
+<Page>
+    <Header />
+    <Content>
+        <div class='.mainPage'>
+            <section>
+                <h2>Projects</h2>
+                <Scroller>
+                    {
+                        mainProjects.map(x => (
+                            <ScrollCard
+                                title={x.name}
+                                link={x.url}
+                                image={x.image}
+                            >
+                                {x.tags.map((y: any) => (
+                                    <ScrollCardTag tag={y} />
+                                ))}
+                            </ScrollCard>
+                        ))
+                    }
+                </Scroller>
+                <h2>Other things</h2>
+                <Scroller>
+                    {
+                        smallProjects.map(x => (
+                            <ScrollCardSmol
+                                title={x.name}
+                                link={x.url}
+                                image={x.image}
+                            >
+                                {x.tags.map((y: any) => (
+                                    <ScrollCardTag tag={y} />
+                                ))}
+                            </ScrollCardSmol>
+                        ))
+                    }
+                </Scroller>
+            </section>
+        </div>
+    </Content>
+</Page>

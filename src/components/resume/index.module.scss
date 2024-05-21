@@ -1,0 +1,239 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+.header {
+    background-color: transparent;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    top: 0px;
+    left: 0px;
+    height: 100px;
+    margin-bottom: 70px;
+    position: absolute;
+    z-index: 5;
+
+    h1 {
+        font-family: "Roboto", sans-serif;
+        font-weight: 300;
+        font-size: 50px;
+        margin: 0;
+        margin-left: 50px;
+        margin-top: 30px;
+        height: 80px;
+        color: #ffffff;
+        display: inline-block;
+
+        .firstName {
+            font-family: "Roboto", sans-serif;
+            font-weight: 500;
+            color: #e32c2c;
+        }
+    }
+
+    p {
+        font-family: "Roboto";
+        color: #eeeeee;
+        padding-left: 60px;
+        margin-top: 10px;
+    }
+
+    .diagonalLine {
+        position: relative;
+        z-index: -5;
+        svg {
+            top: -30px;
+            position: absolute;
+            width: 100%;
+            height: 50px;
+        }
+    }
+}
+
+.topInfoContainer {
+    width: 100%;
+
+    .bio {
+        position: absolute;
+        left: 100px;
+        top: 230px;
+        width: 550px;
+        font-size: 23px;
+        font-weight: 400;
+    }
+
+    .contact {
+        position: absolute;
+        left: 700px;
+        display: flex;
+        width: 500px;
+        flex-direction: column;
+        top: 150px;
+
+        .contactField {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            height: 50px;
+
+            .contactFieldImage {
+                width: 32px;
+                padding-right: 15px;
+                display: inline-block;
+            }
+
+            font-size: 23px;
+            font-weight: 300;
+
+            :link,
+            :visited {
+                color: #1080db;
+            }
+
+            width: 500px;
+        }
+    }
+}
+
+.verticalLine {
+    border-left: 0.5mm solid black;
+    height: 275mm;
+    top: 475px;
+    position: absolute;
+    left: 148mm;
+}
+
+.splitContainer {
+    width: 297mm;
+    top: 400px;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+
+    .split {
+        width: 148.5mm;
+        display: flex;
+        flex-direction: column;
+
+        h2 {
+            margin-left: 30px;
+            font-weight: 300;
+            font-size: 29px;
+        }
+    }
+}
+
+.thingBox {
+    padding-left: 60px;
+    width: 450px;
+    white-space: pre-wrap;
+    .thingHeader {
+        display: flex;
+        flex-direction: row;
+
+        h3 {
+            font-size: 26px;
+            margin-bottom: 5px;
+            font-weight: 400;
+        }
+        p {
+            font-size: 20px;
+            margin-left: auto;
+        }
+    }
+    .thingShortDesc {
+        margin-top: -5px;
+        margin-left: 5px;
+        width: 350px;
+        font-size: 20px;
+        color: #d51f3e;
+    }
+    .thingContent {
+        margin-left: 5px;
+        font-size: 18px;
+    }
+}
+
+.projectBox > .thingBox {
+    padding-left: 20px;
+    width: 400px;
+}
+.projectBox {
+    display: flex;
+    flex-direction: row;
+
+    .projectImage {
+        width: 50px;
+        height: 50px;
+        margin-top: 30px;
+        margin-left: 40px;
+
+        > img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .projectStats {
+        display: flex;
+        flex-direction: row;
+        height: 25px;
+        margin-top: 0px;
+        padding-top: 0px;
+
+        p {
+            height: 25px;
+            text-align: right;
+            line-height: 25px;
+            margin-top: 0px;
+            padding-top: 0px;
+            padding-bottom: 0px;
+            margin-bottom: 0px;
+            margin-right: 35px;
+            display: inline-block;
+            font-size: 19px;
+            font-weight: 500;
+        }
+    }
+}
+
+.more_projects_label {
+    padding-left: 40px;
+}
+
+.languageBox {
+    padding-left: 40px;
+    width: 470px;
+    white-space: pre-wrap;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    padding-top: 0px;
+    padding-bottom: 20px;
+
+    h3 {
+        font-size: 24px;
+        margin-bottom: 0px;
+        margin-top: 0px;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        font-weight: 400;
+    }
+
+    p {
+        margin-bottom: 0px;
+        margin-top: 0px;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        font-weight: 300;
+        font-size: 19px;
+    }
+}
+
+.a4Paper {
+    margin: auto;
+    position: relative;
+    background-color: white;
+    color: #111;
+    width: 297mm;
+    height: 420mm;
+    font-family: "Roboto";
+}

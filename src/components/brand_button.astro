@@ -1,0 +1,38 @@
+---
+import {
+    brandButton,
+    brandButtonLink,
+    diagonalLine,
+    elementContainer,
+    imageWrapper,
+} from "./brand_button.module.scss";
+
+type Props = {
+    link: string;
+    text: string;
+    image: any;
+    color: string;
+};
+
+const props = Astro.props;
+---
+
+<a href={props.link} class={brandButtonLink}>
+    <div class={brandButton}>
+        <div class={elementContainer}>
+            <div class={imageWrapper} style={{ color: props.color }}>
+                {(<props.image.default />)}
+            </div>
+            <p>{props.text}</p>
+        </div>
+        <div class={diagonalLine}>
+            <svg preserveAspectRatio='none' viewBox='0 0 100 100'>
+                <polygon
+                    points='0,0 0,70 100,100 100,0'
+                    style={{
+                        fill: props.color,
+                    }}></polygon>
+            </svg>
+        </div>
+    </div>
+</a>

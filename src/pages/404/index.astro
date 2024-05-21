@@ -1,0 +1,26 @@
+---
+import { Image } from "astro:assets";
+import Content from "../../components/content.astro";
+import Header from "../../components/header.astro";
+import Page from "../../components/page.astro";
+import Tags from "../../components/tags.astro";
+import { fourOhFour, image } from "./index.module.scss";
+
+import imageSource from "./miko_dead.png";
+---
+
+<Tags
+    title='Four oh four'
+    description="It's gone"
+    keywords={["programming", "programmer", "error", "404"]}
+/>
+<Page>
+    <Header />
+    <Content>
+        <div class={fourOhFour}>
+            <Image class={image} src={imageSource} alt='Uh oh' />
+            <h1>404</h1>
+            <p>Page not found</p>
+        </div>
+    </Content>
+</Page>

@@ -1,0 +1,35 @@
+---
+import { Image } from "astro:assets";
+import { type ScrollCardProps } from "./scroll_card.astro";
+import {
+    scrollCard,
+    scrollCardSmol,
+    imageContainer,
+    tags,
+    imageContent,
+} from "./scroll_card.module.scss";
+
+type Props = ScrollCardProps;
+
+const props = Astro.props;
+const imagePath = props.image;
+const images = import.meta.glob<{ default: ImageMetadata }>("../**/*.png");
+if (!images[imagePath])
+    throw new Error(
+        `"${imagePath}" does not exist in glob: ${Object.keys(images)}`,
+    );
+---
+
+<a class={scrollCard + " " + scrollCardSmol} href={props.link}>
+    <div class={imageContainer}>
+        <Image
+            class={imageContent}
+            src={images[imagePath]()}
+            width={620}
+            height={349}
+            alt={props.title + " Banner"}
+        />
+    </div>
+    <ul class={tags}><slot /></ul>
+    <h3>{props.title}</h3>
+</a>

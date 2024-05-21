@@ -1,0 +1,28 @@
+---
+import { Image } from "astro:assets";
+
+import {
+    pageBanner,
+    largeImage,
+    mobileImage,
+    largeWrapper,
+    mobileWrapper,
+} from "./page_banner.module.scss";
+
+type Props = {
+    largeImage: any;
+    mobileImage: any;
+    alt: string;
+};
+
+const props = Astro.props;
+---
+
+<div class={pageBanner}>
+    <div class={largeWrapper}>
+        <Image class={largeImage} src={props.largeImage} alt={props.alt} />
+    </div>
+    <div class={mobileWrapper}>
+        <Image class={mobileImage} src={props.mobileImage} alt={props.alt} />
+    </div>
+</div>

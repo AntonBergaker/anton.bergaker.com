@@ -1,0 +1,33 @@
+---
+import { Image } from "astro:assets";
+import ProjectPageLayout from "../../components/layouts/project_page.astro";
+import Tags from "../../components/tags.astro";
+
+import Femton1 from "./img/115-1.png";
+import Femton2 from "./img/115-2.png";
+import Femton3 from "./img/115-3.png";
+import Femton4 from "./img/115-4.png";
+---
+
+<style>
+    .femtonImage {
+        width: 100%;
+        height: 100%;
+    }
+</style>
+
+<Tags
+    title="Jacob's femtons"
+    description='Pretty ladies on the internet. Very hot.'
+    keywords={[""]}
+/>
+<ProjectPageLayout>
+    <div>
+        <h2>100 femtons</h2>
+        <p>Made by Jacob's pet skinwaker.</p>
+        <Image class='femtonImage' src={Femton1} alt='' />
+        <Image class='femtonImage' src={Femton2} alt='' />
+        <Image class='femtonImage' src={Femton3} alt='' />
+        <Image class='femtonImage' src={Femton4} alt='' />
+    </div>
+</ProjectPageLayout>

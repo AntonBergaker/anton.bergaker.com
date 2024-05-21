@@ -1,0 +1,20 @@
+---
+import Content from "../content.astro";
+import Header from "../header.astro";
+import Page from "../page.astro";
+---
+
+<style>
+    .projectPage {
+        h2,
+        h3 {
+            font-weight: 500;
+        }
+    }
+</style>
+<Page>
+    <Header />
+    <Content>
+        <div class='.projectPage'><slot /></div>
+    </Content>
+</Page>

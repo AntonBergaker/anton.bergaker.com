@@ -1,0 +1,1236 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=UA-170157092-1"
+        ></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag("js", new Date());
+
+            gtag("config", "UA-170157092-1");
+        </script>
+        <title>Anton Bergåker - Authentic Native Textbox</title>
+        <meta name="description" content="Function list for ANT" />
+        <meta
+            name="keywords"
+            content="programming, programmer, gamedev, gamedevelopment, game, gamemaker, textbox, ios, android"
+        />
+        <meta charset="utf-8" />
+        <!-- Mobile support-->
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <!-- Icons-->
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="/favicon-32x32.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="256x256"
+            href="/favicon-256x256.png"
+        />
+        <!-- Material Design fonts-->
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700"
+            type="text/css"
+        />
+        <!-- Font Awesome Icons-->
+        <link
+            rel="stylesheet"
+            href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+            integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+            crossorigin="anonymous"
+        />
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                background-color: #1e2029;
+            }
+
+            header p {
+                font-family: "Roboto";
+                color: #eeeeee;
+                padding-left: 60px;
+                margin-top: 10px;
+            }
+
+            p {
+                font-family: "Roboto";
+                color: #eeeeee;
+                padding-left: 30px;
+                margin-top: 10px;
+                padding-right: 30px;
+            }
+
+            h2 {
+                font-family: "Roboto Thin";
+                color: #eeeeee;
+            }
+
+            .first_name {
+                font-family: "Roboto Light";
+                color: #e32c2c;
+            }
+
+            #container {
+                padding-left: 30px;
+                margin: auto;
+                max-width: 1500px;
+            }
+
+            .main_banner_wrapper {
+                text-align: center;
+                max-width: 1000px;
+                width: 100%;
+                margin: auto;
+                padding-top: 20px;
+            }
+
+            .main_banner {
+                width: 90%;
+                margin: auto;
+            }
+
+            .main_banner_mobile {
+                display: none;
+            }
+
+            .main_banner_large {
+                display: block;
+            }
+
+            .scroller {
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+            }
+
+            .scroll_card {
+                flex: 1;
+                min-width: 400px;
+                max-width: 500px;
+                margin: 30px;
+                padding-bottom: 5px;
+                margin-bottom: 10px;
+                background-color: #32343b;
+                position: relative;
+                box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.6);
+                text-align: center;
+                text-decoration: none;
+            }
+
+            .scroll_card .tags {
+                text-align: center;
+                padding: 0;
+                margin: 4px;
+            }
+
+            .scroll_card .tags > li {
+                text-align: left;
+                display: inline-block;
+                display: inline-block;
+                margin: 4px 5px 0 5px;
+                padding: 2px 8px 2px 8px;
+                border-radius: 25px;
+                font-family: "Roboto";
+                color: #fff;
+            }
+
+            .scroll_card .fas,
+            .scroll_card .fab {
+                font-size: 120px;
+                text-align: center;
+                color: #dddddd;
+                padding-top: 15px;
+                padding-bottom: 10px;
+            }
+
+            .scroll_card_smol {
+                max-width: 270px;
+                min-width: 270px;
+            }
+
+            .scroll_card_extra_smol {
+                max-width: 150px;
+                min-width: 150px;
+                height: 230px;
+                padding: 15px;
+            }
+
+            .scroll_card h3 {
+                padding: 10px;
+                margin: 0;
+            }
+
+            h3 {
+                color: #fff;
+                font-family: "Roboto";
+            }
+
+            .scroll_card .image-container > img {
+                position: absolute;
+                height: 100%;
+                left: 0;
+                top: 0;
+            }
+
+            .scroll_card .image-container {
+                position: relative;
+                width: 100%;
+                padding-top: 56.2765957446808%; /* Ratio between image height and width, making it as tall as it's supposed to be before images are loaded */
+            }
+
+            .scroll_card.scroll_card_smol .image-container {
+                padding-top: 56.2903225806452%;
+            }
+
+            .image_text {
+                position: absolute;
+                text-align: center;
+                font-size: 25px;
+                color: #fff;
+                font-family: "Roboto";
+                top: 40%;
+                left: 50%;
+                padding: 0;
+                margin: 0;
+                transform: rotate(-5deg) translate(-50%, -73%);
+            }
+
+            #app_popup_button:hover {
+                cursor: pointer;
+            }
+
+            .app_popup {
+                position: absolute;
+                width: 120%;
+                padding: 10%;
+                left: 100%;
+                top: 0%;
+                z-index: 50;
+                margin: 0;
+                box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.6);
+                background-color: #52545b;
+                display: none;
+            }
+
+            .app_popup_arrow {
+                position: absolute;
+                z-index: 100;
+                left: -25%;
+                width: 30%;
+            }
+
+            .app_popup img {
+                margin: 0 auto;
+                z-index: 110;
+            }
+            .app_popup img:last-of-type {
+                padding-top: 5%;
+            }
+
+            a {
+                margin: 0;
+                padding: 0;
+            }
+
+            .scroll_card:hover h3 {
+                text-decoration: underline;
+                text-decoration-color: #e32c2c;
+                color: #e32c2c;
+            }
+
+            #header {
+                background-color: #32343b;
+                width: 100%;
+                margin: 0;
+                padding: 0;
+                top: 0px;
+                left: 0px;
+                height: 120px;
+            }
+
+            #header a {
+                text-decoration: none;
+            }
+
+            #header h1 {
+                font-family: "Roboto Thin";
+                font-size: 36px;
+                padding-left: 50px;
+                padding-top: 20px;
+                margin: 0;
+                color: #ffffff;
+                display: inline-block;
+            }
+
+            #header p {
+                font-family: "Roboto";
+                color: #eeeeee;
+                padding-left: 60px;
+            }
+
+            #contact_links a {
+                padding: 0;
+                margin: 0;
+                margin-left: 20px;
+                margin-right: 20px;
+                font-size: 50px;
+                color: #fff;
+            }
+
+            #contact_links a:hover {
+                color: #e32c2c;
+            }
+
+            #contact_links {
+                position: absolute;
+                top: 30px;
+                right: 50px;
+            }
+
+            @media (max-width: 720px) {
+                #contact_links {
+                    position: relative;
+                    padding-bottom: 20px;
+                    top: 0;
+                    right: 0;
+                }
+
+                #header {
+                    height: 100%;
+                    text-align: center;
+                }
+
+                #header h1 {
+                    padding-left: 0px;
+                }
+                #header p {
+                    padding-left: 0px;
+                }
+                .scroll_card_extra_smol {
+                    max-width: 120px;
+                    min-width: 120px;
+                    height: 200px;
+                }
+                .scroll_card .fas,
+                .scroll_card .fab {
+                    font-size: 96px;
+                }
+            }
+
+            @media (max-width: 500px) {
+                .scroll_card {
+                    min-width: 80%;
+                }
+                .scroll_card_extra_smol {
+                    max-width: 80px;
+                    min-width: 80px;
+                    height: 170px;
+                    margin: 15px;
+                }
+                .scroll_card .fas,
+                .scroll_card .fab {
+                    font-size: 64px;
+                    padding-top: 0px;
+                }
+                #container {
+                    padding-left: 0px;
+                }
+
+                #container h2 {
+                    padding-left: 20px;
+                }
+
+                .main_banner_mobile {
+                    display: block;
+                }
+                .main_banner_large {
+                    display: none;
+                }
+            }
+            .func {
+                margin-top: 50px;
+                font-family: "Courier New", Courier, monospace;
+                color: #ffffff;
+            }
+
+            .func > h3 > span {
+                color: #ffb871;
+            }
+
+            .func .func_param {
+                color: #b2b1ff;
+            }
+
+            .func .func_arglabel {
+                font-size: 14px;
+            }
+
+            .func_args {
+                margin-top: 0px;
+                margin-left: 60px;
+                text-align: left;
+                font-size: 18px;
+            }
+
+            .func_args td {
+                font-family: "Roboto";
+                font-size: 16px;
+                width: 300px;
+            }
+
+            .func_args td:first-child {
+                font-family: "Courier New", Courier, monospace;
+                margin-right: 100px;
+                width: 150px;
+            }
+
+            .func_return {
+                font-style: italic;
+                font-size: 15px;
+            }
+
+            .func_return > span {
+                font-style: normal;
+            }
+
+            .func_description {
+                font-family: "Roboto Light";
+                font-size: 16px;
+            }
+
+            .code {
+                font-family: "Courier New", Courier, monospace;
+            }
+
+            a {
+                color: #55ffff;
+            }
+
+            a:visited {
+                color: #ff55ff;
+            }
+
+            .const_list {
+                margin-top: 0px;
+                margin-left: 60px;
+                text-align: left;
+                font-size: 17px;
+            }
+
+            .const_list td:first-child {
+                width: 300px;
+            }
+
+            .const_list td:nth-child(2) {
+                font-family: "Roboto";
+                font-size: 16px;
+            }
+
+            #toc {
+                margin-left: 50px;
+                font-size: 18px;
+            }
+
+            .toc_entry a {
+                color: rgb(120, 227, 253);
+            }
+        </style>
+    </head>
+    <body>
+        <div id="header">
+            <a href="../"
+                ><h1><span class="first_name">Anton</span> Bergåker</h1></a
+            >
+            <p id="motto">Now without random taglines!</p>
+            <div id="contact_links">
+                <a href="https://twitter.com/DragonCoke"
+                    ><i class="fab fa-twitter"></i></a
+                ><a href="https://github.com/AntonBergaker"
+                    ><i class="fab fa-github"></i></a
+                ><a href="mailto:anton@bergaker.com"
+                    ><i class="fas fa-envelope"></i
+                ></a>
+            </div>
+        </div>
+        <div id="container">
+            <h2>Authentic Native Textbox</h2>
+            <p>
+                Authentic Native Textbox creates native textboxes that are
+                overlaid on top of the game. Because of this it's not possible
+                to draw anything over them.
+            </p>
+            <p>
+                Textboxes are created in code and must be manually cleaned up.
+                Textboxes will automatically launch the virtual keyboard
+                whenever they are pressed and will handle copy/pasting,
+                selections, and other various features you expect in textboxes
+                on the native platforms.
+            </p>
+            <p>
+                To detect if the virtual keyboard is out you cannot use the
+                inbuilt
+                <a
+                    class="code"
+                    href="https://docs2.yoyogames.com/source/_build/3_scripting/4_gml_reference/controls/virtual%20keys/keyboard_virtual_status.html"
+                    >keyboard_virtual_status()</a
+                >
+                as it will not detect if the keyboard was launched by a textbox.
+                However
+                <a
+                    class="code"
+                    href="https://docs2.yoyogames.com/source/_build/3_scripting/4_gml_reference/controls/virtual%20keys/keyboard_virtual_height.html"
+                    >keyboard_virtual_height()</a
+                >
+                works as normal and can be used instead.
+            </p>
+            <h3>Table of contents</h3>
+            <div id="toc">
+                <div class="toc_entry">
+                    <a href="#ant_textbox_create">ant_textbox_create</a>
+                </div>
+                <div class="toc_entry">
+                    <a href="#ant_textbox_remove">ant_textbox_remove</a>
+                </div>
+                <div class="toc_entry">
+                    <a href="#ant_textbox_set_position"
+                        >ant_textbox_set_position</a
+                    >
+                </div>
+                <div class="toc_entry">
+                    <a href="#ant_textbox_set_text_size"
+                        >ant_textbox_set_text_size</a
+                    >
+                </div>
+                <div class="toc_entry">
+                    <a href="#ant_textbox_android_set_font"
+                        >ant_textbox_android_set_font</a
+                    >
+                </div>
+                <div class="toc_entry">
+                    <a href="#ant_textbox_ios_set_font"
+                        >ant_textbox_ios_set_font</a
+                    >
+                </div>
+                <div class="toc_entry">
+                    <a href="#ant_textbox_set_style">ant_textbox_set_style</a>
+                </div>
+                <div class="toc_entry">
+                    <a href="#ant_textbox_set_text">ant_textbox_set_text</a>
+                </div>
+                <div class="toc_entry">
+                    <a href="#ant_textbox_get_text">ant_textbox_get_text</a>
+                </div>
+                <div class="toc_entry">
+                    <a href="#ant_textbox_set_color">ant_textbox_set_color</a>
+                </div>
+                <div class="toc_entry">
+                    <a href="#ant_textbox_focus">ant_textbox_focus</a>
+                </div>
+                <div class="toc_entry">
+                    <a href="#ant_textbox_unfocus">ant_textbox_unfocus</a>
+                </div>
+                <div class="toc_entry">
+                    <a href="#ant_textbox_is_focused">ant_textbox_is_focused</a>
+                </div>
+                <div class="toc_entry">
+                    <a href="#ant_textbox_has_submitted"
+                        >ant_textbox_has_submitted</a
+                    >
+                </div>
+                <div class="toc_entry">
+                    <a href="#ant_textbox_set_enabled"
+                        >ant_textbox_set_enabled</a
+                    >
+                </div>
+                <div class="toc_entry">
+                    <a href="#ant_textbox_set_focusable"
+                        >ant_textbox_set_focusable</a
+                    >
+                </div>
+                <div class="toc_entry">
+                    <a href="#ant_textbox_android_set_style"
+                        >ant_textbox_android_set_style</a
+                    >
+                </div>
+                <div class="toc_entry">
+                    <a href="#ant_textbox_ios_set_style"
+                        >ant_textbox_ios_set_style</a
+                    >
+                </div>
+                <div class="toc_entry">
+                    <a href="#ant_textbox_ios_set_password"
+                        >ant_textbox_ios_set_password</a
+                    >
+                </div>
+            </div>
+            <div class="func" id="ant_textbox_create">
+                <h3><span>ant_textbox_create</span>()</h3>
+                <table class="func_args"></table>
+                <p class="func_return"><span>Returns: </span>Created textbox</p>
+                <p class="func_description">
+                    Creates a new textbox and returns it.
+                </p>
+            </div>
+            <div class="func" id="ant_textbox_remove">
+                <h3>
+                    <span>ant_textbox_remove</span>(<span class="func_param"
+                        >textbox</span
+                    >)
+                </h3>
+                <p class="func_arglabel">Arguments</p>
+                <table class="func_args">
+                    <tr>
+                        <td>textbox</td>
+                        <td>Textbox to remove</td>
+                    </tr>
+                </table>
+                <p class="func_return">
+                    <span>Returns: </span>0 if successful, -1 if not
+                </p>
+                <p class="func_description">Removes the provided textbox</p>
+            </div>
+            <div class="func" id="ant_textbox_set_position">
+                <h3>
+                    <span>ant_textbox_set_position</span>(<span
+                        class="func_param"
+                        >textbox</span
+                    >, <span class="func_param">x</span>,
+                    <span class="func_param">y</span>,
+                    <span class="func_param">width</span>,
+                    <span class="func_param">height</span>)
+                </h3>
+                <p class="func_arglabel">Arguments</p>
+                <table class="func_args">
+                    <tr>
+                        <td>textbox</td>
+                        <td>Textbox to apply to</td>
+                    </tr>
+                    <tr>
+                        <td>x</td>
+                        <td>Position y in pixels</td>
+                    </tr>
+                    <tr>
+                        <td>y</td>
+                        <td>Height in pixels</td>
+                    </tr>
+                    <tr>
+                        <td>width</td>
+                        <td>Width in pixels</td>
+                    </tr>
+                    <tr>
+                        <td>height</td>
+                        <td>Height in pixels</td>
+                    </tr>
+                </table>
+                <p class="func_return">
+                    <span>Returns: </span>0 if successful, -1 if not
+                </p>
+                <p class="func_description">
+                    Positions the provided textbox at the given location.
+                </p>
+            </div>
+            <div class="func" id="ant_textbox_set_text_size">
+                <h3>
+                    <span>ant_textbox_set_text_size</span>(<span
+                        class="func_param"
+                        >textbox</span
+                    >, <span class="func_param">size</span>)
+                </h3>
+                <p class="func_arglabel">Arguments</p>
+                <table class="func_args">
+                    <tr>
+                        <td>textbox</td>
+                        <td>Textbox to apply to</td>
+                    </tr>
+                    <tr>
+                        <td>size</td>
+                        <td>Size of the text inside the box in pts</td>
+                    </tr>
+                </table>
+                <p class="func_return">
+                    <span>Returns: </span>0 if successful, -1 if not
+                </p>
+                <p class="func_description">
+                    Sets the size of the text in the textbox. The value is in
+                    points and should match what the equivalent font is set to
+                    in GameMaker.
+                </p>
+            </div>
+            <div class="func" id="ant_textbox_android_set_font">
+                <h3>
+                    <span>ant_textbox_android_set_font</span>(<span
+                        class="func_param"
+                        >textbox</span
+                    >, <span class="func_param">font</span>)
+                </h3>
+                <p class="func_arglabel">Arguments</p>
+                <table class="func_args">
+                    <tr>
+                        <td>textbox</td>
+                        <td>Textbox to apply to</td>
+                    </tr>
+                    <tr>
+                        <td>font</td>
+                        <td>Name of the font to style the textbox with</td>
+                    </tr>
+                </table>
+                <p class="func_return">
+                    <span>Returns: </span>0 if successful, -1 if not
+                </p>
+                <p class="func_description">
+                    Sets what font the textbox should use on an Android system.
+                </p>
+                <p>The available fonts are as follows</p>
+                <table class="const_list">
+                    <tr>
+                        <td><strong>Identifier to provide</strong></td>
+                        <td><strong>Actual font</strong></td>
+                    </tr>
+                    <tr>
+                        <td>sans-serif-thin</td>
+                        <td>Roboto Thin</td>
+                    </tr>
+                    <tr>
+                        <td>sans-serif-light</td>
+                        <td>Roboto Light</td>
+                    </tr>
+                    <tr>
+                        <td>sans-serif</td>
+                        <td>Roboto Regular</td>
+                    </tr>
+                    <tr>
+                        <td>sans-serif-medium</td>
+                        <td>Roboto Medium</td>
+                    </tr>
+                    <tr>
+                        <td>sans-serif-black</td>
+                        <td>Roboto Black</td>
+                    </tr>
+                    <tr>
+                        <td>sans-serif-condensed-light</td>
+                        <td>Roboto Condensed Light</td>
+                    </tr>
+                    <tr>
+                        <td>sans-serif-condensed</td>
+                        <td>Roboto Condensed Regular</td>
+                    </tr>
+                    <tr>
+                        <td>sans-serif-condensed-medium</td>
+                        <td>Roboto Condensed Medium</td>
+                    </tr>
+                    <tr>
+                        <td>serif</td>
+                        <td>Noto Serif</td>
+                    </tr>
+                    <tr>
+                        <td>monospace</td>
+                        <td>Droid Sans Mono</td>
+                    </tr>
+                    <tr>
+                        <td>serif-monospace</td>
+                        <td>CutiveMono</td>
+                    </tr>
+                    <tr>
+                        <td>cursive</td>
+                        <td>Dancing Script</td>
+                    </tr>
+                    <tr>
+                        <td>sans-serif-smallcaps</td>
+                        <td>CarroisGothic SC</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="func" id="ant_textbox_ios_set_font">
+                <h3>
+                    <span>ant_textbox_ios_set_font</span>(<span
+                        class="func_param"
+                        >textbox</span
+                    >, <span class="func_param">font</span>)
+                </h3>
+                <p class="func_arglabel">Arguments</p>
+                <table class="func_args">
+                    <tr>
+                        <td>textbox</td>
+                        <td>Textbox to apply to</td>
+                    </tr>
+                    <tr>
+                        <td>font</td>
+                        <td>Name of the font to style the textbox with</td>
+                    </tr>
+                </table>
+                <p class="func_return">
+                    <span>Returns: </span>0 if successful, -1 if not
+                </p>
+                <p class="func_description">
+                    Sets what font the textbox should use on an iOS system. The
+                    available fonts can be found
+                    <a href="https://iosfontlist.com">here</a>.
+                </p>
+            </div>
+            <div class="func" id="ant_textbox_set_style">
+                <h3>
+                    <span>ant_textbox_set_style</span>(<span class="func_param"
+                        >textbox</span
+                    >, <span class="func_param">type</span>,
+                    <span class="func_param">capitalization</span>,
+                    <span class="func_param">autocorrect</span>)
+                </h3>
+                <p class="func_arglabel">Arguments</p>
+                <table class="func_args">
+                    <tr>
+                        <td>textbox</td>
+                        <td>Textbox to apply to</td>
+                    </tr>
+                    <tr>
+                        <td>type</td>
+                        <td>Type of textbox this should be</td>
+                    </tr>
+                    <tr>
+                        <td>capitalization</td>
+                        <td>Type of capitalization this textbox should use</td>
+                    </tr>
+                    <tr>
+                        <td>autocorrect</td>
+                        <td>Type of autocorrect this textbox should use</td>
+                    </tr>
+                </table>
+                <p class="func_return">
+                    <span>Returns: </span>0 if successful, -1 if not
+                </p>
+                <p>
+                    Sets the textbox's style on all platforms. This will replace
+                    anything previously set by the platform specific style
+                    functions. The function arguments expect macros.
+                </p>
+                <p>
+                    This constant is used to decide what type of keyboard to
+                    show.
+                </p>
+                <table class="const_list">
+                    <tr>
+                        <td><strong>Keyboard type</strong></td>
+                        <td><strong>Description</strong></td>
+                    </tr>
+                    <tr>
+                        <td>ant_style_type_default</td>
+                        <td>Shows a default keyboard</td>
+                    </tr>
+                    <tr>
+                        <td>ant_style_type_ascii</td>
+                        <td>Shows a keyboard with ascii only</td>
+                    </tr>
+                    <tr>
+                        <td>ant_style_type_url</td>
+                        <td>Shows a keyboard for url input</td>
+                    </tr>
+                    <tr>
+                        <td>ant_style_type_email</td>
+                        <td>Shows a keyboard for email input</td>
+                    </tr>
+                    <tr>
+                        <td>ant_style_type_password</td>
+                        <td>
+                            Hides the entered text and does not allow copying
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>ant_style_type_numbers</td>
+                        <td>Shows a numberpad</td>
+                    </tr>
+                </table>
+                <p>
+                    This constant is used to determine how the text should be
+                    capitalized
+                </p>
+                <table class="const_list">
+                    <tr>
+                        <td><strong>Capitalization type</strong></td>
+                        <td><strong>Description</strong></td>
+                    </tr>
+                    <tr>
+                        <td>ant_style_capitalize_none</td>
+                        <td>Nothing is capitalized</td>
+                    </tr>
+                    <tr>
+                        <td>ant_style_capitalize_words</td>
+                        <td>Words are capitalized</td>
+                    </tr>
+                    <tr>
+                        <td>ant_style_capitalize_sentences</td>
+                        <td>Sentences are capitalized</td>
+                    </tr>
+                    <tr>
+                        <td>ant_style_capitalize_all</td>
+                        <td>All text is capitalized</td>
+                    </tr>
+                </table>
+                <p>
+                    This constant determines if autocorrect should be enabled or
+                    not
+                </p>
+                <table class="const_list">
+                    <tr>
+                        <td><strong>Autocorrection type</strong></td>
+                        <td><strong>Description</strong></td>
+                    </tr>
+                    <tr>
+                        <td>ant_style_autocorrect_off</td>
+                        <td>Autocorrect is disabled</td>
+                    </tr>
+                    <tr>
+                        <td>ant_style_autocorrect_on</td>
+                        <td>Autocorrect is enabled</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="func" id="ant_textbox_set_text">
+                <h3>
+                    <span>ant_textbox_set_text</span>(<span class="func_param"
+                        >textbox</span
+                    >, <span class="func_param">text</span>)
+                </h3>
+                <p class="func_arglabel">Arguments</p>
+                <table class="func_args">
+                    <tr>
+                        <td>textbox</td>
+                        <td>Textbox to apply to</td>
+                    </tr>
+                    <tr>
+                        <td>text</td>
+                        <td>Text to set inside the textbox</td>
+                    </tr>
+                </table>
+                <p class="func_return">
+                    <span>Returns: </span>0 if successful, -1 if not
+                </p>
+                <p class="func_description">
+                    Sets the text of the textbox to the provided string
+                </p>
+            </div>
+            <div class="func" id="ant_textbox_get_text">
+                <h3>
+                    <span>ant_textbox_get_text</span>(<span class="func_param"
+                        >textbox</span
+                    >)
+                </h3>
+                <p class="func_arglabel">Arguments</p>
+                <table class="func_args">
+                    <tr>
+                        <td>textbox</td>
+                        <td>Textbox to get text from</td>
+                    </tr>
+                </table>
+                <p class="func_return">
+                    <span>Returns: </span>Text of the textbox
+                </p>
+                <p class="func_description">
+                    Gets the text currently inside the textbox as a string
+                </p>
+            </div>
+            <div class="func" id="ant_textbox_set_color">
+                <h3>
+                    <span>ant_textbox_set_color</span>(<span class="func_param"
+                        >textbox</span
+                    >, <span class="func_param">color</span>,
+                    <span class="func_param">alpha</span>)
+                </h3>
+                <p class="func_arglabel">Arguments</p>
+                <table class="func_args">
+                    <tr>
+                        <td>textbox</td>
+                        <td>Textbox to apply to</td>
+                    </tr>
+                    <tr>
+                        <td>color</td>
+                        <td>BGR color value</td>
+                    </tr>
+                    <tr>
+                        <td>alpha</td>
+                        <td>Alpha value 0-1</td>
+                    </tr>
+                </table>
+                <p class="func_return">
+                    <span>Returns: </span>0 if successful, -1 if not
+                </p>
+                <p class="func_description">
+                    Sets the color and alpha of the text inside the textbox.
+                    Will not affect other textbox graphical elements, like the
+                    selection color/strength.
+                </p>
+            </div>
+            <div class="func" id="ant_textbox_focus">
+                <h3>
+                    <span>ant_textbox_focus</span>(<span class="func_param"
+                        >textbox</span
+                    >)
+                </h3>
+                <p class="func_arglabel">Arguments</p>
+                <table class="func_args">
+                    <tr>
+                        <td>textbox</td>
+                        <td>Textbox to focus</td>
+                    </tr>
+                </table>
+                <p class="func_return">
+                    <span>Returns: </span>0 if successful, -1 if not
+                </p>
+                <p class="func_description">
+                    Focuses the provided textbox. This will select it and show
+                    the virtual keyboard, if applicable.
+                </p>
+            </div>
+            <div class="func" id="ant_textbox_unfocus">
+                <h3>
+                    <span>ant_textbox_unfocus</span>(<span class="func_param"
+                        >textbox</span
+                    >)
+                </h3>
+                <p class="func_arglabel">Arguments</p>
+                <table class="func_args">
+                    <tr>
+                        <td>textbox</td>
+                        <td>Textbox to unfocus</td>
+                    </tr>
+                </table>
+                <p class="func_return">
+                    <span>Returns: </span>0 if successful, -1 if not
+                </p>
+                <p class="func_description">
+                    Unfocus the provided textbox. This will deselect it and
+                    prevent further input from reaching it.
+                </p>
+            </div>
+            <div class="func" id="ant_textbox_is_focused">
+                <h3>
+                    <span>ant_textbox_is_focused</span>(<span class="func_param"
+                        >textbox</span
+                    >)
+                </h3>
+                <p class="func_arglabel">Arguments</p>
+                <table class="func_args">
+                    <tr>
+                        <td>textbox</td>
+                        <td>Textbox to check</td>
+                    </tr>
+                </table>
+                <p class="func_return">
+                    <span>Returns: </span>0 if successful, -1 if not
+                </p>
+                <p class="func_description">
+                    Returns if the textbox is focused or not.
+                </p>
+            </div>
+            <div class="func" id="ant_textbox_has_submitted">
+                <h3>
+                    <span>ant_textbox_has_submitted</span>(<span
+                        class="func_param"
+                        >textbox</span
+                    >)
+                </h3>
+                <p class="func_arglabel">Arguments</p>
+                <table class="func_args">
+                    <tr>
+                        <td>textbox</td>
+                        <td>Textbox to apply to</td>
+                    </tr>
+                </table>
+                <p class="func_return">
+                    <span>Returns: </span>True if the textbox hit submit,
+                    otherwise false
+                </p>
+                <p class="func_description">
+                    Returns true if the user has clicked the submit/enter key on
+                    the keyboard, since this function was ran last.
+                </p>
+            </div>
+            <div class="func" id="ant_textbox_set_enabled">
+                <h3>
+                    <span>ant_textbox_set_enabled</span>(<span
+                        class="func_param"
+                        >textbox</span
+                    >, <span class="func_param">enabled</span>)
+                </h3>
+                <p class="func_arglabel">Arguments</p>
+                <table class="func_args">
+                    <tr>
+                        <td>textbox</td>
+                        <td>Textbox to apply to</td>
+                    </tr>
+                    <tr>
+                        <td>enabled</td>
+                        <td>Controls if the textbox is enabled or not</td>
+                    </tr>
+                </table>
+                <p class="func_return">
+                    <span>Returns: </span>0 if successful, -1 if not
+                </p>
+                <p class="func_description">
+                    Configures if the textbox is visible and interactable. If
+                    enabled is set to false, the textbox will not be visible or
+                    pressable.
+                </p>
+            </div>
+            <div class="func" id="ant_textbox_set_focusable">
+                <h3>
+                    <span>ant_textbox_set_focusable</span>(<span
+                        class="func_param"
+                        >textbox</span
+                    >, <span class="func_param">focusable</span>)
+                </h3>
+                <p class="func_arglabel">Arguments</p>
+                <table class="func_args">
+                    <tr>
+                        <td>textbox</td>
+                        <td>Textbox to apply to</td>
+                    </tr>
+                    <tr>
+                        <td>focusable</td>
+                        <td>Controls if the textbox is focusable or not</td>
+                    </tr>
+                </table>
+                <p class="func_return">
+                    <span>Returns: </span>0 if successful, -1 if not
+                </p>
+                <p class="func_description">
+                    Set if the textbox is clickable or not. If it’s set to false
+                    the textbox will not be able to be pressed, but will still
+                    be visible.
+                </p>
+            </div>
+            <div class="func" id="ant_textbox_android_set_style">
+                <h3>
+                    <span>ant_textbox_android_set_style</span>(<span
+                        class="func_param"
+                        >textbox</span
+                    >, <span class="func_param">style</span>)
+                </h3>
+                <p class="func_arglabel">Arguments</p>
+                <table class="func_args">
+                    <tr>
+                        <td>textbox</td>
+                        <td>Textbox to apply to</td>
+                    </tr>
+                    <tr>
+                        <td>style</td>
+                        <td>Style-flags to apply to the textbox</td>
+                    </tr>
+                </table>
+                <p class="func_return">
+                    <span>Returns: </span>0 if successful, -1 if not
+                </p>
+                <p class="func_description">
+                    Applies the provided flags to the textbox on Android. This
+                    lets you mark a textbox as made for passwords, emails etc.
+                    All the constants are available
+                    <a
+                        href="https://developer.android.com/reference/android/text/InputType"
+                        >here</a
+                    >. To pass multile flags, use a bitwise or "|". This is only
+                    intended to be used if you require special functionality,
+                    for general use the normal style function is recommended.
+                </p>
+            </div>
+            <div class="func" id="ant_textbox_ios_set_style">
+                <h3>
+                    <span>ant_textbox_ios_set_style</span>(<span
+                        class="func_param"
+                        >textbox</span
+                    >, <span class="func_param">type</span>,
+                    <span class="func_param">capitalization</span>,
+                    <span class="func_param">autocorrect</span>)
+                </h3>
+                <p class="func_arglabel">Arguments</p>
+                <table class="func_args">
+                    <tr>
+                        <td>textbox</td>
+                        <td>Textbox to apply to</td>
+                    </tr>
+                    <tr>
+                        <td>type</td>
+                        <td>Type of textbox this should be</td>
+                    </tr>
+                    <tr>
+                        <td>capitalization</td>
+                        <td>Type of capitalization this textbox should use</td>
+                    </tr>
+                    <tr>
+                        <td>autocorrect</td>
+                        <td>Type of autocorrect this textbox should use</td>
+                    </tr>
+                </table>
+                <p class="func_return">
+                    <span>Returns: </span>0 if successful, -1 if not
+                </p>
+                <p class="func_description">
+                    Applies the provided flags to the textbox on iOS. This lets
+                    you mark a textbox as made for emails, phone numbers etc.
+                    All the constants are available
+                    <a
+                        href="https://developer.apple.com/documentation/uikit/uikeyboardtype"
+                        >here</a
+                    >. This is only intended to be used if you require special
+                    functionality, for general use the normal style function is
+                    recommended.
+                </p>
+            </div>
+            <div class="func" id="ant_textbox_ios_set_password">
+                <h3>
+                    <span>ant_textbox_ios_set_password</span>(<span
+                        class="func_param"
+                        >textbox</span
+                    >, <span class="func_param">password</span>)
+                </h3>
+                <p class="func_arglabel">Arguments</p>
+                <table class="func_args">
+                    <tr>
+                        <td>textbox</td>
+                        <td>Textbox to apply to</td>
+                    </tr>
+                    <tr>
+                        <td>password</td>
+                        <td>If true, textbox is marked as password input</td>
+                    </tr>
+                </table>
+                <p class="func_return">
+                    <span>Returns: </span>0 if successful, -1 if not
+                </p>
+                <p class="func_description">
+                    Sets the box to be treated as a password box in iOS. This
+                    means the text will be converted into stars and you will not
+                    be able to copy text from it.
+                </p>
+            </div>
+        </div>
+        <script>
+            let mottos = [
+                "Because programming needs spreadsheets",
+                "Anton <3 coffee",
+                "When life gives you lemons",
+                "Not actually a scarecrow",
+                "Still stuck playing factorio",
+                "It works on my machine",
+                "From Sweden with love",
+                "We'll burn that bridge when we get there",
+                "Let's add it to a list! Let's add the list to a list!",
+                "You can do it 🎉",
+                "Send me cute things!",
+                "This message only appears if you're cute",
+            ];
+            let motto = document.getElementById("motto");
+            motto.innerHTML = mottos[Math.floor(Math.random() * mottos.length)];
+        </script>
+    </body>
+</html>

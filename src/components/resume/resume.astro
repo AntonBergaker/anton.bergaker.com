@@ -1,0 +1,233 @@
+---
+import {
+    header,
+    firstName,
+    diagonalLine,
+    a4Paper,
+    topInfoContainer,
+    bio,
+    contact,
+    splitContainer,
+    verticalLine,
+    split,
+    more_projects_label,
+} from "./index.module.scss";
+
+import ContactField from "./resume_contact_field.astro";
+import LanguageBox from "./resume_language_box.astro";
+import ProjectBox from "./resume_project_box.astro";
+import WorkEducationBox from "./resume_work_education_box.astro";
+
+import petrockIcon from "./images/PetrockIcon.png";
+import stdIcon from "./images/STDIcon.png";
+import pentapopIcon from "./images/PentapopIcon.png";
+import minisweeperIcon from "./images/MinisweeperIcon.png";
+import Tags from "../tags.astro";
+
+type Props = {
+    bio: string;
+    education: string;
+    uu: string;
+    uu_desc: string;
+    bd_desc: string;
+    work: string;
+    ksu_title: string;
+    ksu_desc: string;
+    programmer: string;
+    scarecrow_desc: string;
+    eris_desc: string;
+    warehouse_worker: string;
+    khs_desc: string;
+    my_projects: string;
+    visitors: string;
+    prr_desc: string;
+    prr_line: string;
+    std_desc: string;
+    installs: string;
+    pp_desc: string;
+    mini_desc: string;
+    more_projects: string;
+    programming_languages: string;
+    csharp_desc: string;
+    ts_desc: string;
+    unity_desc: string;
+    java_desc: string;
+    gm_desc: string;
+};
+
+const props = Astro.props;
+---
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: #2b2b2b;
+
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        color: white;
+    }
+</style>
+
+<Tags description='Anton Bergåker' keywords={[]} title='Anton Bergåker' />
+<body>
+    <div class={a4Paper}>
+        <div id='header' class={header}>
+            <h1>
+                <span class={firstName}>Anton</span> Bergåker
+            </h1>
+            <div class={diagonalLine}>
+                <svg preserveAspectRatio='none' viewBox='0 0 100 100'>
+                    <polygon
+                        points='0,0 0,100 100,70 100,0'
+                        style={{
+                            fill: "#D51F3E",
+                        }}></polygon>
+                </svg>
+                <svg
+                    overflow='visible'
+                    preserveAspectRatio='none'
+                    viewBox='0 0 100 100'
+                >
+                    <polygon
+                        points='0,-1000 0,80 100,30 100,-1000'
+                        style={{
+                            fill: "#1F2022",
+                        }}></polygon>
+                </svg>
+            </div>
+        </div>
+        <div class={topInfoContainer}>
+            <div class={bio}>{props.bio}</div>
+            <div class={contact}>
+                <ContactField
+                    image={await import("../svgs/email.astro")}
+                    text='anton@bergaker.com'
+                    link='mailto:anton@bergaker.com'
+                />
+                <ContactField
+                    image={await import("../svgs/phone.astro")}
+                    text='0709480949'
+                    link='tel://+46709480949'
+                />
+                <ContactField
+                    image={await import("../svgs/globe.astro")}
+                    text='https://anton.bergaker.com'
+                />
+                <ContactField
+                    image={await import("../svgs/github.astro")}
+                    text='https://github.com/AntonBergaker'
+                />
+            </div>
+        </div>
+        <div class={verticalLine}></div>
+        <div class={splitContainer}>
+            <div class={split}>
+                <h2>{props.education}</h2>
+                <WorkEducationBox
+                    title={props.uu}
+                    years='2017 - 2022'
+                    desc={props.uu_desc}
+                >
+                    <p></p>
+                </WorkEducationBox>
+                <WorkEducationBox
+                    title='Bäckadalsgymnasiet'
+                    years='2013 - 2016'
+                    desc={props.bd_desc}
+                />
+
+                <h2>{props.work}</h2>
+                <WorkEducationBox
+                    title={props.ksu_title}
+                    years='2022 -'
+                    desc={props.programmer}
+                >
+                    <p>{props.ksu_desc}</p>
+                </WorkEducationBox>
+                <WorkEducationBox
+                    title='Scarecrow Arts'
+                    years='2016 - 2021'
+                    desc={props.programmer}
+                >
+                    <p>{props.scarecrow_desc}</p>
+                </WorkEducationBox>
+                <WorkEducationBox
+                    title='Studio Eris'
+                    years='2018 - 2018'
+                    desc={props.programmer}
+                >
+                    <p>{props.eris_desc}</p>
+                </WorkEducationBox>
+                <WorkEducationBox
+                    title='Karl H Ström'
+                    years='2013 - 2017'
+                    desc={props.warehouse_worker}
+                >
+                    <p>{props.khs_desc}</p>
+                </WorkEducationBox>
+            </div>
+            <div class={split}>
+                <h2>{props.my_projects}</h2>
+                <ProjectBox
+                    title='Petrock Rocket Racing'
+                    years='2022-'
+                    image={petrockIcon}
+                    stats0={props.prr_line}
+                    stats1=''
+                >
+                    <p>{props.prr_desc}</p>
+                </ProjectBox>
+
+                <ProjectBox
+                    title='Super Tower Defense'
+                    years='2021 - 2022'
+                    image={stdIcon}
+                    stats0={`500 000+ ${props.visitors}`}
+                    stats1='30 000 ★'
+                >
+                    <p>{props.std_desc}</p>
+                </ProjectBox>
+                <ProjectBox
+                    title='Pentapop'
+                    years='2018 - 2019'
+                    image={pentapopIcon}
+                    stats0={`10 000+ ${props.installs}`}
+                    stats1='4.5 ★'
+                >
+                    <p>{props.pp_desc}</p>
+                </ProjectBox>
+                {
+                    false && (
+                        <ProjectBox
+                            title='miniSweeper'
+                            years='2017 - 2018'
+                            image={minisweeperIcon}
+                            stats0={`50 000+ ${props.installs}`}
+                            stats1='4.7 ★'
+                        >
+                            <p> {props.mini_desc}</p>
+                        </ProjectBox>
+                    )
+                }
+
+                <p class={more_projects_label}>
+                    {props.more_projects}{" "}
+                    <a href='https://github.com/AntonBergaker'> GitHub </a>
+                    .
+                </p>
+
+                <h2>{props.programming_languages}</h2>
+                <LanguageBox title='C#' description={props.csharp_desc} />
+                <LanguageBox
+                    title='TypeScript / JavaScript'
+                    description={props.ts_desc}
+                />
+                <LanguageBox title='Unity 3D' description={props.unity_desc} />
+                <LanguageBox title='Java' description={props.java_desc} />
+                <LanguageBox title='GameMaker' description={props.gm_desc} />
+            </div>
+        </div>
+    </div>
+</body>

@@ -1,0 +1,18 @@
+---
+import { contactField, contactFieldImage } from "./index.module.scss";
+
+type Props = {
+    image: any;
+    text: string;
+    link?: string;
+};
+
+const props = Astro.props;
+const image = props.image;
+---
+
+<div class={contactField}>
+    <div class={contactFieldImage}><image /></div>
+    <a href={props.link ?? props.text}>{props.text}</a>
+</div>
+---

@@ -1,0 +1,11 @@
+---
+import { languageBox } from "./index.module.scss";
+
+type Props = { title: string; description: string };
+const props = Astro.props;
+---
+
+<div class={languageBox}>
+    <h3>{props.title}</h3>
+    <p>{props.description}</p>
+</div>

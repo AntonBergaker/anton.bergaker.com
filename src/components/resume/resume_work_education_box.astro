@@ -1,0 +1,33 @@
+---
+import {
+    thingBox,
+    thingHeader,
+    thingShortDesc,
+    thingContent,
+} from "./index.module.scss";
+
+type Props = {
+    title: string;
+    years: string;
+    desc: string;
+};
+
+const props = Astro.props;
+---
+
+<div class={thingBox}>
+    <div class={thingHeader}>
+        <h3>{props.title}</h3>
+        <p>{props.years}</p>
+    </div>
+    <p class={thingShortDesc}>
+        <i>{props.desc}</i>
+    </p>
+    {
+        Astro.slots.has("default") && (
+            <div class={thingContent}>
+                <slot />
+            </div>
+        )
+    }
+</div>

@@ -1,0 +1,45 @@
+---
+import { Image } from "astro:assets";
+import {
+    thingBox,
+    thingHeader,
+    thingContent,
+    projectStats,
+    projectBox,
+    projectImage,
+} from "./index.module.scss";
+
+type Props = {
+    title: string;
+    years: string;
+    image: ImageMetadata;
+    stats0: string;
+    stats1: string;
+};
+
+const props = Astro.props;
+console.log(props);
+---
+
+<div class={projectBox}>
+    <div class={projectImage}>
+        <Image src={props.image} alt={props.title + " icon"} />
+    </div>
+    <div class={thingBox}>
+        <div class={thingHeader}>
+            <h3>{props.title}</h3>
+            <p>{props.years}</p>
+        </div>
+        <div class={projectStats}>
+            <p>{props.stats0}</p>
+            <p>{props.stats1}</p>
+        </div>
+        {
+            Astro.slots.has("default") && (
+                <div class={thingContent}>
+                    <slot />
+                </div>
+            )
+        }
+    </div>
+</div>

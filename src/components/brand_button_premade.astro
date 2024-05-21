@@ -1,0 +1,61 @@
+---
+import BrandButton from "./brand_button.astro";
+
+const brands = {
+    website: {
+        color: "#56D1F7",
+        image: await import("./svgs/globe.astro"),
+    },
+    xbox: {
+        color: "#0F780F",
+        image: await import("./svgs/xbox.astro"),
+    },
+    switch: {
+        color: "#DA121E",
+        image: await import("./svgs/nintendo_switch.astro"),
+    },
+    steam: {
+        color: "#00AEEF",
+        image: await import("./svgs/steam.astro"),
+    },
+    google_play: {
+        color: "#0AE977",
+        image: await import("./svgs/google_play.astro"),
+    },
+    app_store: {
+        color: "#1AA2F8",
+        image: await import("./svgs/app_store.astro"),
+    },
+    github: {
+        color: "#9c45aa",
+        image: await import("./svgs/github.astro"),
+    },
+    windows: {
+        color: "#00A8E8",
+        image: await import("./svgs/windows.astro"),
+    },
+    vrchat: {
+        color: "#094C81",
+        image: await import("./svgs/vrchat.astro"),
+    },
+};
+
+export type TagNames = keyof typeof brands;
+
+type Props = {
+    brand: TagNames;
+    link: string;
+    text: string;
+};
+
+const props = Astro.props;
+
+const brand = brands[props.brand];
+---
+
+<BrandButton
+    image={brand.image}
+    color={brand.color}
+    text={props.text}
+    link={props.link}
+/>
