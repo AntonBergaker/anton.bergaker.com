@@ -1,32 +1,5 @@
 import { type TagNames } from "../components/scroll_card_tag.astro";
 
-// Haha death pls
-import TsgoImage from "../pages/card_images/tsgo.png";
-import PentapopImage from "../pages/card_images/pentapop.png";
-import MinisweeperImage from "../pages/card_images/minisweeper.png";
-import DontSinkImage from "../pages/card_images/dont_sink.png";
-import BunBundleImage from "../pages/card_images/bunbundle.png";
-
-import VrcTowerDefenseImage from "../pages/card_images/vrc_tower_defense.png";
-import EvilHangmanImage from "../pages/card_images/evil_hangman.png";
-import HonkNetworkImage from "../pages/card_images/honk_network.png";
-import RoverWarsImage from "../pages/card_images/rover_wars.png";
-import PetrockRocketRacingImage from "../pages/card_images/petrock_rocket_racing.png";
-import SnailTrailTrialImage from "../pages/card_images/snail_trail_trial.png";
-import DoodleDigitsImage from "../pages/card_images/doodledigits.png";
-import XtremeXplosiveFishingImage from "../pages/card_images/xtreme_xplosive_fishing.png";
-import VibusImage from "../pages/card_images/vibus.png";
-import TsitdImage from "../pages/card_images/tsitd.png";
-import CaffeineKingImage from "../pages/card_images/caffeine_king.png";
-import CoopBannerImage from "../pages/card_images/coop_banner.png";
-import AntImage from "../pages/card_images/ant.png";
-import MinesweeperDiscordBotImage from "../pages/card_images/minesweeper_discord_bot.png";
-import SmallPpImage from "../pages/card_images/small_pp.png";
-import ImageHostImage from "../pages/card_images/image_host.png";
-import AntonBergakerComImage from "../pages/card_images/anton_bergaker_com.png";
-import DecimalTimeImage from "../pages/card_images/decimal_time.png";
-import SplitTaskImage from "../pages/card_images/splittask_banner.png";
-
 export type ProjectData = {
     major_project: boolean;
     name: string;

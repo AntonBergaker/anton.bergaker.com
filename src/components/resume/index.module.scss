@@ -74,6 +74,9 @@
             flex-direction: row;
             align-items: center;
             height: 50px;
+            font-size: 23px;
+            font-weight: 300;
+            width: 500px;
 
             .contactFieldImage {
                 width: 32px;
@@ -81,15 +84,10 @@
                 display: inline-block;
             }
 
-            font-size: 23px;
-            font-weight: 300;
-
             :link,
             :visited {
                 color: #1080db;
             }
-
-            width: 500px;
         }
     }
 }
