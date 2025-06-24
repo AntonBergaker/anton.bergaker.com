@@ -59,17 +59,11 @@ if (localProps.name == null) {
 
 const polyArray = localProps.name.length < 5 ? thinPolys : thickPolys;
 const poly = polyArray[Math.floor(Math.random() * polyArray.length)];
+const angle = (Math.random()-0.5)*5
 ---
 
-<li class={scrollCardTag}>
-    <div class={tagWrapper}>
-        <svg
-            class={background}
-            preserveAspectRatio='none'
-            viewBox='0 0 100 100'
-        >
-            <polygon points={poly} fill={localProps.color}></polygon>
-        </svg>
+<li class={scrollCardTag} style={{transform: `rotate(${angle}deg)`}}}>
+    <div class={tagWrapper} style={{backgroundColor: localProps.color}}>
         <span class={text}>{localProps.name}</span>
     </div>
 </li>

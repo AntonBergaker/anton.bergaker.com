@@ -9,44 +9,54 @@ a:hover.scrollCard h3 {
     min-width: 400px;
     max-width: 500px;
     margin: 30px;
-    padding-bottom: 5px;
+    padding-bottom: 15px;
     margin-bottom: 10px;
-    background-color: #343434;
+    background-color: #f3f3f3;
     position: relative;
-    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
     text-align: center;
     text-decoration: none;
+    border-radius: 50px;
+
+    display: inline-block;
 
     .tags {
         text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-flow: wrap;
         padding: 0;
-        margin: 4px;
+        margin: auto;
+        min-height: 75px;
     }
 
     .fas,
     .fab {
         font-size: 120px;
         text-align: center;
-        color: #dddddd;
+        color: #121212;
         padding-top: 15px;
         padding-bottom: 10px;
     }
 
     h3 {
-        color: #eeeeee;
+        color: #121212;
         padding: 10px;
         margin: 0;
-        font-family: "Roboto", sans-serif;
         font-weight: 500;
     }
 
     .imageContainer {
+        padding: 50px 0 50px 0;
+        background-color: #e32c2c;
         position: relative;
         width: 100%;
+        border-radius: 50px 50px 0px 0px;
 
         .imageContent {
-            width: 100%;
-            height: 100%;
+            width: 95%;
+            height: 95%;
         }
     }
 
@@ -58,6 +68,13 @@ a:hover.scrollCard h3 {
 .scrollCardSmol {
     max-width: 270px;
     min-width: 270px;
+    border-radius: 30px;
+
+    .imageContainer {
+        .imageContent {
+            
+        }
+    }
 
     @media (max-width: 450px) {
         min-width: 80%;

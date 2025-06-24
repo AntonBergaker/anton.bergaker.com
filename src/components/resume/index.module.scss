@@ -1,5 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #2b2b2b;
+
+    font-family: "Cute Dino", sans-serif;
+    font-weight: 400;
+    color: white;
+}
+
 .header {
     background-color: transparent;
     width: 100%;
@@ -13,7 +23,7 @@
     z-index: 5;
 
     h1 {
-        font-family: "Roboto", sans-serif;
+        font-family: "Cute Dino", sans-serif;
         font-weight: 300;
         font-size: 50px;
         margin: 0;
@@ -24,14 +34,14 @@
         display: inline-block;
 
         .firstName {
-            font-family: "Roboto", sans-serif;
+            font-family: "Cute Dino", sans-serif;
             font-weight: 500;
             color: #e32c2c;
         }
     }
 
     p {
-        font-family: "Roboto";
+        font-family: "Cute Dino", sans-serif;
         color: #eeeeee;
         padding-left: 60px;
         margin-top: 10px;
@@ -151,13 +161,14 @@
     }
 }
 
-.projectBox > .thingBox {
-    padding-left: 20px;
-    width: 400px;
-}
 .projectBox {
     display: flex;
     flex-direction: row;
+
+    .projectBox > .thingBox {
+        padding-left: 20px;
+        width: 400px;
+    }
 
     .projectImage {
         width: 50px;
@@ -179,13 +190,11 @@
         padding-top: 0px;
 
         p {
+            margin: 0;
+            padding: 0;
             height: 25px;
             text-align: right;
             line-height: 25px;
-            margin-top: 0px;
-            padding-top: 0px;
-            padding-bottom: 0px;
-            margin-bottom: 0px;
             margin-right: 35px;
             display: inline-block;
             font-size: 19px;
@@ -199,28 +208,21 @@
 }
 
 .languageBox {
-    padding-left: 40px;
     width: 470px;
     white-space: pre-wrap;
-    margin-bottom: 0px;
-    margin-top: 0px;
-    padding-top: 0px;
-    padding-bottom: 20px;
+    margin: 0;
+    padding: 0;
+    padding-left: 40px;
 
+    h3, p {
+        margin: 0;
+        padding: 0;
+    }
     h3 {
         font-size: 24px;
-        margin-bottom: 0px;
-        margin-top: 0px;
-        padding-top: 0px;
-        padding-bottom: 0px;
         font-weight: 400;
     }
-
     p {
-        margin-bottom: 0px;
-        margin-top: 0px;
-        padding-top: 0px;
-        padding-bottom: 0px;
         font-weight: 300;
         font-size: 19px;
     }
