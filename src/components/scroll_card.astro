@@ -21,9 +21,11 @@ if (!images[imagePath])
     throw new Error(
         `"${imagePath}" does not exist in glob: ${Object.keys(images)}`,
     );
+
+const angle = (Math.random()-0.5)*2
 ---
 
-<a class={scrollCard} href={props.link}>
+<a class={scrollCard} style={{rotate: `${angle}deg`}} href={props.link}>
     <div class={imageContainer}>
         <Image
             class={imageContent}

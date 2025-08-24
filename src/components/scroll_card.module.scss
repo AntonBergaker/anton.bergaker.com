@@ -1,3 +1,6 @@
+$radius: 30px;
+$small-radius: 20px;
+
 a:hover.scrollCard h3 {
     text-decoration: underline;
     text-decoration-color: #e32c2c;
@@ -11,12 +14,12 @@ a:hover.scrollCard h3 {
     margin: 30px;
     padding-bottom: 15px;
     margin-bottom: 10px;
-    background-color: #f3f3f3;
+    background: linear-gradient(135deg, #225169, #171c1f);
     position: relative;
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
     text-align: center;
     text-decoration: none;
-    border-radius: 50px;
+    border-radius: $radius;
 
     display: inline-block;
 
@@ -41,22 +44,17 @@ a:hover.scrollCard h3 {
     }
 
     h3 {
-        color: #121212;
+        color: #e7e7e7;
         padding: 10px;
         margin: 0;
         font-weight: 500;
     }
 
     .imageContainer {
-        padding: 50px 0 50px 0;
-        background-color: #e32c2c;
-        position: relative;
-        width: 100%;
-        border-radius: 50px 50px 0px 0px;
-
         .imageContent {
-            width: 95%;
-            height: 95%;
+            border-radius: $radius $radius 0px 0px;
+            width: 100%;
+            height: 100%;
         }
     }
 
@@ -68,11 +66,11 @@ a:hover.scrollCard h3 {
 .scrollCardSmol {
     max-width: 270px;
     min-width: 270px;
-    border-radius: 30px;
+    border-radius: $small-radius;
 
     .imageContainer {
         .imageContent {
-            
+            border-radius: $small-radius $small-radius 0px 0px;
         }
     }
 

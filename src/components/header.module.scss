@@ -1,5 +1,5 @@
 .header {
-    background-color: #eee;
+    background: linear-gradient(135deg, #4b1826, #210f14, #340024);
     width: 100%;
     margin: 0;
     padding: 0;
@@ -19,7 +19,7 @@
         margin: 0;
         margin-left: 50px;
         margin-top: 40px;
-        color: #222;
+        color: #e7e7e7;
         display: inline-block;
 
         .firstName {
@@ -29,7 +29,7 @@
     }
 
     p {
-        color: #222;
+        color: #e3e3e3;
         padding-left: 60px;
         margin-top: 10px;
     }

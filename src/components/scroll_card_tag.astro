@@ -28,6 +28,29 @@ const colors = {
     godot: { name: "Godot", color: "#4588B9" },
     react: { name: "React", color: "#58C4DC" },
 };
+
+const pastelLookup = {
+  "#1CA972": "#3D8C72", // GameMaker
+  "#0A1C49": "#32407A", // Steam
+  "#DE000F": "#B23A46", // Nintendo Switch
+  "#0F760F": "#3C8C3C", // Xbox One
+  "#F89A1B": "#B86B2D", // Play in Browser
+  "#953DAC": "#74338F", // C#
+  "#2B7489": "#3B697A", // TypeScript
+  "#228B22": "#3E8C47", // Android
+  "#147EFB": "#2F5CB2", // iOS
+  "#A10707": "#7D2E2E", // Contract Work
+  "#E34C26": "#A64633", // HTML5
+  "#669F64": "#4E7C4E", // Node.js
+  "#A45EE5": "#7141A3", // Game Jam
+  "#296D98": "#355D7A", // Blog Post
+  "#FB422D": "#A63D33", // Extension
+  "#774CE0": "#5738A3", // WPF
+  "#111111": "#333333", // Unity 3D
+  "#4588B9": "#376889", // Godot
+  "#58C4DC": "#3A8C9C"  // React
+};
+
 export type TagNames = keyof typeof colors;
 
 type Props = ScrollCardTagProps | ScrollCardCustomProps;
@@ -60,10 +83,13 @@ if (localProps.name == null) {
 const polyArray = localProps.name.length < 5 ? thinPolys : thickPolys;
 const poly = polyArray[Math.floor(Math.random() * polyArray.length)];
 const angle = (Math.random()-0.5)*5
+
+const color = pastelLookup[ localProps.color ?? "" ]
+
 ---
 
 <li class={scrollCardTag} style={{transform: `rotate(${angle}deg)`}}}>
-    <div class={tagWrapper} style={{backgroundColor: localProps.color}}>
+    <div class={tagWrapper} style={{backgroundColor: color}}>
         <span class={text}>{localProps.name}</span>
     </div>
 </li>
