@@ -23,6 +23,9 @@ import stdIcon from "./images/STDIcon.png";
 import pentapopIcon from "./images/PentapopIcon.png";
 import minisweeperIcon from "./images/MinisweeperIcon.png";
 import Tags from "../tags.astro";
+import Github from "../svgs/github.astro";
+import Globe from "../svgs/globe.astro";
+import Email from "../svgs/email.astro";
 
 type Props = {
     bio: string;
@@ -57,19 +60,6 @@ type Props = {
 
 const props = Astro.props;
 ---
-
-<style>
-    body {
-        margin: 0;
-        padding: 0;
-        background-color: #2b2b2b;
-
-        font-family: "Roboto", sans-serif;
-        font-weight: 400;
-        color: white;
-    }
-</style>
-
 <Tags description='Anton Bergåker' keywords={[]} title='Anton Bergåker' />
 <body>
     <div class={a4Paper}>
@@ -102,23 +92,15 @@ const props = Astro.props;
             <div class={bio}>{props.bio}</div>
             <div class={contact}>
                 <ContactField
-                    image={await import("../svgs/email.astro")}
                     text='anton@bergaker.com'
                     link='mailto:anton@bergaker.com'
-                />
+                ><Email/></ContactField>
                 <ContactField
-                    image={await import("../svgs/phone.astro")}
-                    text='0709480949'
-                    link='tel://+46709480949'
-                />
-                <ContactField
-                    image={await import("../svgs/globe.astro")}
                     text='https://anton.bergaker.com'
-                />
+                ><Globe/></ContactField>
                 <ContactField
-                    image={await import("../svgs/github.astro")}
                     text='https://github.com/AntonBergaker'
-                />
+                ><Github/></ContactField>
             </div>
         </div>
         <div class={verticalLine}></div>
@@ -129,15 +111,12 @@ const props = Astro.props;
                     title={props.uu}
                     years='2017 - 2022'
                     desc={props.uu_desc}
-                >
-                    <p></p>
-                </WorkEducationBox>
+                />
                 <WorkEducationBox
                     title='Bäckadalsgymnasiet'
                     years='2013 - 2016'
                     desc={props.bd_desc}
                 />
-
                 <h2>{props.work}</h2>
                 <WorkEducationBox
                     title={props.ksu_title}

@@ -1,4 +1,4 @@
-import { type TagNames } from "../components/scroll_card_tag.astro";
+import { type TagNames } from "@components/scroll_card_tag.astro";
 
 export type ProjectData = {
     major_project: boolean;
@@ -12,21 +12,21 @@ export const projects: ProjectData[] = [
     {
         major_project: true,
         name: "The Story Goes On",
-        url: "/thestorygoeson",
+        url: "/projects/the-story-goes-on",
         image: "../pages/card_images/tsgo.png",
         tags: ["gamemaker", "steam", "nintendo_switch", "xbox_one"],
     },
     {
         major_project: true,
         name: "Pentapop",
-        url: "/pentapop",
+        url: "/projects/pentapop",
         image: "../pages/card_images/pentapop.png",
         tags: ["play_in_browser", "gamemaker", "csharp", "android", "ios"],
     },
     {
         major_project: true,
         name: "miniSweeper",
-        url: "/minisweeper",
+        url: "/projects/minisweeper",
         image: "../pages/card_images/minisweeper.png",
         tags: ["play_in_browser", "gamemaker", "android", "ios"],
     },
@@ -40,7 +40,7 @@ export const projects: ProjectData[] = [
     {
         major_project: true,
         name: "Super Tower Defense",
-        url: "/vrc_tower_defense",
+        url: "/projects/super-tower-defense",
         image: "../pages/card_images/vrc_tower_defense.png",
         tags: ["unity3d", "csharp"],
     },
@@ -110,7 +110,7 @@ export const projects: ProjectData[] = [
     {
         major_project: false,
         name: "Decimal Time",
-        url: "/decimaltime",
+        url: "/decimal-time",
         image: "../pages/card_images/decimal_time.png",
         tags: ["blog_post", "html5"],
     },
