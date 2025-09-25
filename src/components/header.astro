@@ -7,7 +7,7 @@ import {
 } from "./header.module.scss";
 import EmailSvg from "./svgs/email.astro";
 import GithubSvg from "./svgs/github.astro";
-import TwitterSvg from "./svgs/twitter.astro";
+import BlueskySvg from "./svgs/bluesky.astro";
 ---
 
 <div id='header' class={header}>
@@ -18,8 +18,8 @@ import TwitterSvg from "./svgs/twitter.astro";
     </a>
     <p id='motto'>Now without random taglines!</p>
     <div class={contactLinks}>
-        <a href='https://twitter.com/DragonCoke'>
-            <TwitterSvg color='#55acee' />
+        <a href='https://bsky.app/profile/anton.bergaker.com'>
+            <BlueskySvg color='#55acee' />
         </a>
         <a href='https://github.com/AntonBergaker'>
             <GithubSvg color='#9c45aa' />
@@ -48,15 +48,15 @@ import TwitterSvg from "./svgs/twitter.astro";
                 }}></polygon>
         </svg>
     </div>
+
 </div>
 
 <script>
     const mottos = [
         "Because programming needs spreadsheets",
         "Anton <3 coffee",
-        "When life gives you lemons",
-        "Not actually a scarecrow",
-        "Still stuck playing factorio",
+        "Probably not a scarecrow",
+        "Probably not a chain chomp",
         "It works on my machine",
         "From Sweden with love",
         "We'll burn that bridge when we get there",
@@ -65,7 +65,19 @@ import TwitterSvg from "./svgs/twitter.astro";
         "Send me cute things!",
         "This message only appears if you're cute",
         "Those that commit last, commits longest",
+        "Denying the furry allegations",
+        "Big technology",
+        "Small technology",
+        "This is a very Anton thing to say",
+        "It isn't easy when it's difficult",
+        "ERROR: \"Index out of bounds\" on \"mottos\".",
+        "Bomba",
+        "🐸"
     ];
-    const motto = document.getElementById("motto");
-    motto!.innerHTML = mottos[Math.floor(Math.random() * mottos.length)];
+    const mottoElement = document.getElementById("motto");
+    const motto = mottos[Math.floor(Math.random() * mottos.length)];
+    if (!mottoElement) {
+        console.log(`Did not find motto. Now the world won't know: ${motto}`)
+    }
+    mottoElement!.innerHTML = motto;
 </script>

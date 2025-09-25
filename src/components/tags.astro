@@ -3,9 +3,16 @@ type Props = {
     title: string;
     description: string;
     keywords: string[];
+    icon32?: string;
+    icon256?: string;
+    image?: string
 };
 
 const props = Astro.props;
+const icon32 = props.icon32 ?? "/favicon-32x32.png"
+const icon256 = props.icon256 ?? "/favicon-256x256.png"
+const image = props.image ?? "https://anton.bergaker.com/avatar.png"
+
 ---
 
 <head>
@@ -14,12 +21,12 @@ const props = Astro.props;
     <meta name='description' content={props.description} />
     <meta name='keywords' content={props.keywords.join(", ")} />
     <meta name='viewport' content='width=device-width, initial-scale=1' />
-    <link rel='icon' type='image/png' sizes='32x32' href='/favicon-32x32.png' />
+    <link rel='icon' type='image/png' sizes='32x32' href={icon32} />
     <link
         rel='icon'
         type='image/png'
         sizes='256x256'
-        href='/favicon-256x256.png'
+        href={icon256}
     />
     <link rel='preconnect' href='https://fonts.gstatic.com' />
     <link
@@ -29,10 +36,10 @@ const props = Astro.props;
     <meta property='og:title' content={props.title} />
     <meta property='og:description' content={props.description} />
     <meta property='og:type' content='website' />
-    <meta property='og:image' content='https://anton.bergaker.com/avatar.png' />
+    <meta property='og:image' content={image} />
     <meta
         property='og:image:secure_url'
-        content='https://anton.bergaker.com/avatar.png'
+        content={image}
     />
     <meta property='og:image:width' content='492' />
     <meta property='og:image:height' content='492' />
@@ -46,7 +53,7 @@ const props = Astro.props;
     <meta name='twitter:description' content={props.description} />
     <meta
         name='twitter:image'
-        content='https://anton.bergaker.com/avatar.png'
+        content={image}
     />
     <meta name='theme-color' content='#E32C2E' />
 </head>

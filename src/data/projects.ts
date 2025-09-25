@@ -1,4 +1,4 @@
-import { type TagNames } from "../components/scroll_card_tag.astro";
+import { type TagNames } from "@components/scroll_card_tag.astro";
 
 export type ProjectData = {
     major_project: boolean;
@@ -12,21 +12,21 @@ export const projects: ProjectData[] = [
     {
         major_project: true,
         name: "The Story Goes On",
-        url: "/thestorygoeson",
+        url: "/projects/the-story-goes-on",
         image: "../pages/card_images/tsgo.png",
         tags: ["gamemaker", "steam", "nintendo_switch", "xbox_one"],
     },
     {
         major_project: true,
         name: "Pentapop",
-        url: "/pentapop",
+        url: "/projects/pentapop",
         image: "../pages/card_images/pentapop.png",
         tags: ["play_in_browser", "gamemaker", "csharp", "android", "ios"],
     },
     {
         major_project: true,
         name: "miniSweeper",
-        url: "/minisweeper",
+        url: "/projects/minisweeper",
         image: "../pages/card_images/minisweeper.png",
         tags: ["play_in_browser", "gamemaker", "android", "ios"],
     },
@@ -40,7 +40,7 @@ export const projects: ProjectData[] = [
     {
         major_project: true,
         name: "Super Tower Defense",
-        url: "/vrc_tower_defense",
+        url: "/projects/super-tower-defense",
         image: "../pages/card_images/vrc_tower_defense.png",
         tags: ["unity3d", "csharp"],
     },
@@ -57,13 +57,6 @@ export const projects: ProjectData[] = [
         url: "/honknetwork",
         image: "../pages/card_images/honk_network.png",
         tags: ["play_in_browser", "nodejs", "typescript", "html5"],
-    },
-    {
-        major_project: false,
-        name: "Don't Sink - Xbox Port",
-        url: "https://store.steampowered.com/app/710610/Dont_Sink/",
-        image: "../pages/card_images/dont_sink.png",
-        tags: ["gamemaker", "contract_work", "xbox_one"],
     },
     {
         major_project: false,
@@ -85,6 +78,13 @@ export const projects: ProjectData[] = [
         url: "/snail_trail_trial",
         image: "../pages/card_images/snail_trail_trial.png",
         tags: ["play_in_browser", "godot", "game_jam"],
+    },
+    {
+        major_project: false,
+        name: "Squircle PNG Generator",
+        url: "/squircle-generator",
+        image: "../pages/card_images/squircle_generator.png",
+        tags: ["play_in_browser", "typescript", "html5"],
     },
     {
         major_project: false,
@@ -110,7 +110,7 @@ export const projects: ProjectData[] = [
     {
         major_project: false,
         name: "Decimal Time",
-        url: "/decimaltime",
+        url: "/decimal-time",
         image: "../pages/card_images/decimal_time.png",
         tags: ["blog_post", "html5"],
     },
@@ -134,6 +134,13 @@ export const projects: ProjectData[] = [
         url: "http://blog.tsgogame.com/implementing-coop/",
         image: "../pages/card_images/coop_banner.png",
         tags: ["blog_post", "gamemaker"],
+    },
+    {
+        major_project: false,
+        name: "Don't Sink - Xbox Port",
+        url: "https://store.steampowered.com/app/710610/Dont_Sink/",
+        image: "../pages/card_images/dont_sink.png",
+        tags: ["gamemaker", "contract_work", "xbox_one"],
     },
     {
         major_project: false,
