@@ -1,0 +1,29 @@
+---
+import {
+    sliderBox,
+    sliderAndLabel
+} from "./slider_with_input.module.scss"
+
+type Props = {
+    id: string;
+    label: string;
+    minValue: number;
+    maxValue: number;
+    defaultValue: number;
+    integer: boolean;
+};
+
+const props: Props = Astro.props;
+
+const step = props.integer ? 1 : "any";
+
+---
+<div id={props.id} class={sliderAndLabel}>
+    <label for={props.id}>{props.label}</label>
+    <div class={sliderBox}>
+    <input type="range" 
+        min={props.minValue} max={props.maxValue} step={step} value={props.defaultValue}></input>
+    <input type="number" 
+        min={props.minValue} max={props.maxValue} step={step} value={props.defaultValue}></input>
+    </div>
+</div>

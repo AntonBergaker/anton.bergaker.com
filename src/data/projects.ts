@@ -60,13 +60,6 @@ export const projects: ProjectData[] = [
     },
     {
         major_project: false,
-        name: "Don't Sink - Xbox Port",
-        url: "https://store.steampowered.com/app/710610/Dont_Sink/",
-        image: "../pages/card_images/dont_sink.png",
-        tags: ["gamemaker", "contract_work", "xbox_one"],
-    },
-    {
-        major_project: false,
         name: "Rover Wars",
         url: "/rover_wars",
         image: "../pages/card_images/rover_wars.png",
@@ -85,6 +78,13 @@ export const projects: ProjectData[] = [
         url: "/snail_trail_trial",
         image: "../pages/card_images/snail_trail_trial.png",
         tags: ["play_in_browser", "godot", "game_jam"],
+    },
+    {
+        major_project: false,
+        name: "Squircle PNG Generator",
+        url: "/squircle-generator",
+        image: "../pages/card_images/squircle_generator.png",
+        tags: ["play_in_browser", "typescript", "html5"],
     },
     {
         major_project: false,
@@ -134,6 +134,13 @@ export const projects: ProjectData[] = [
         url: "http://blog.tsgogame.com/implementing-coop/",
         image: "../pages/card_images/coop_banner.png",
         tags: ["blog_post", "gamemaker"],
+    },
+    {
+        major_project: false,
+        name: "Don't Sink - Xbox Port",
+        url: "https://store.steampowered.com/app/710610/Dont_Sink/",
+        image: "../pages/card_images/dont_sink.png",
+        tags: ["gamemaker", "contract_work", "xbox_one"],
     },
     {
         major_project: false,

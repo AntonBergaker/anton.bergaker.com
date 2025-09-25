@@ -9,20 +9,20 @@ import {
 
 type Props = {
     id?: string
-    link: string;
     text: string;
-    image: any;
+    image?: any;
     color: string;
 };
 
 const props = Astro.props;
 ---
 
-<a id={props.id} href={props.link} class={brandButtonLink}>
+<a id={props.id} class={brandButtonLink}>
     <div class={brandButton}>
         <div class={elementContainer}>
             <div class={imageWrapper} style={{ color: props.color }}>
-                {(<props.image.default />)}
+                {props.image?.default && (<props.image.default />)}
+                <slot></slot>
             </div>
             <p>{props.text}</p>
         </div>

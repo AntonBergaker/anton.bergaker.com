@@ -1,0 +1,23 @@
+.sliderBox {
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    label {
+        display:inline-block;
+    }
+
+    > input[type=range] {
+        display: inline-block;
+        max-width: 200px;
+    }
+    > input[type=number] {
+        display: inline-block;
+        width: 50px;
+    }
+}
+
+.sliderAndLabel {
+    margin: 30px;
+}
