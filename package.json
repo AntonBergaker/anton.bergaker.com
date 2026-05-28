@@ -1,22 +1,24 @@
 {
     "name": "",
-    "type": "module",
     "version": "0.0.1",
+    "private": true,
     "scripts": {
-        "dev": "astro dev",
-        "start": "astro dev",
-        "build": "astro check && astro build",
-        "preview": "astro preview",
-        "astro": "astro"
+        "dev": "next dev",
+        "build": "next build && next-image-export-optimizer",
+        "start": "next start"
     },
     "dependencies": {
-        "@astrojs/check": "^0.7.0",
-        "astro": "^5.4.0",
+        "@types/react": "^19.2.14",
+        "@types/react-dom": "^19.2.3",
+        "next": "^15.3.1",
+        "next-image-export-optimizer": "^1.20.1",
+        "react": "^19.2.6",
+        "react-dom": "^19.2.6",
         "sass": "^1.77.2",
         "typescript": "^5.4.5"
     },
     "devDependencies": {
-        "prettier": "^3.2.5",
-        "prettier-plugin-astro": "^0.13.0"
+        "@types/node": "20.17.6",
+        "prettier": "^3.2.5"
     }
 }

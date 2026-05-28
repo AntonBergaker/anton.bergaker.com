@@ -2,6 +2,10 @@
 dist/
 # generated types
 .astro/
+.next/
+
+**/nextImageExportOptimizer/**
+next-image-export-optimizer-hashes.json
 
 # dependencies
 node_modules/
